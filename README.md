@@ -72,11 +72,16 @@ samples/  demo pages rendered in a handwriting font (labelled as such in the app
 
 Full tables, method and limits are in **[eval/RESULTS.md](eval/RESULTS.md)**. In short:
 
-- The verifier finds the exact first wrong line in **214/214** synthetic derivations, with **0 false alarms**
-  (sets A and A-hard), in a median of 30–90 ms at $0.
-- An LLM-only checker (Claude Sonnet 5.5, full effort) also scores close to 100% on *typed* steps. We report
-  that plainly. Redline's advantage on typed input is cost, speed, proof and determinism, not accuracy.
-  The photo comparison needs the real-photo set (see RESULTS.md, "Still to run").
+- The verifier finds the exact first wrong line in **254/254** typed synthetic derivations, with **0 false
+  alarms** (sets A, A-hard and A-stress), in a median of 35–100 ms at $0. All 149 error verdicts come with a
+  proof you can check by hand.
+- **An LLM-only checker matched it on typed steps.** Claude Sonnet 5.5 and Haiku 5.5 also scored 100%, consistently
+  across repeats. We expected otherwise and report it plainly. On typed input, Redline's advantage is proof,
+  determinism, about 40× lower latency and zero cost per re-check, not accuracy.
+- **On photos, line references differ.** On 20 pages with distracting text, the LLM-only checker never said
+  "all correct", but it numbered lines wrongly on 9 of 16 injected pages. Redline was exact on 20/20, because its line
+  numbers are the lines it shows you on the photo.
+- **Not yet measured:** accuracy on real handwriting (set B). See RESULTS.md, "Still to run".
 
 ## Run it locally
 
