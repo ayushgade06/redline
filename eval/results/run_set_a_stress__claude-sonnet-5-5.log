@@ -1,0 +1,47 @@
+{
+ "set": "set_a_stress (typed, synthetic, ground truth by construction)",
+ "baseline_model": "claude-sonnet-5-5",
+ "baseline_repeats": 1,
+ "redline": {
+  "n": 40,
+  "n_with_error": 20,
+  "n_correct": 20,
+  "first_error_exact_pct": 100.0,
+  "missed_error_pct": 0.0,
+  "wrong_line_pct": 0.0,
+  "false_alarm_pct": 0.0,
+  "overall_exact_pct": 100.0,
+  "unverifiable_transitions": 0,
+  "p50_ms": 56.35,
+  "cost_usd": 0
+ },
+ "llm_only": {
+  "n": 40,
+  "n_with_error": 20,
+  "n_correct": 20,
+  "first_error_exact_pct": 100.0,
+  "missed_error_pct": 0.0,
+  "wrong_line_pct": 0.0,
+  "false_alarm_pct": 0.0,
+  "overall_exact_pct": 100.0,
+  "api_failures": 0,
+  "p50_ms": 3083,
+  "cost_usd_total": 0.1642,
+  "same_answer_all_runs_pct": 100.0,
+  "per_run_exact_pct": [
+   100.0
+  ]
+ },
+ "by_error_type": {
+  "coefficient_slip": {
+   "n": 20,
+   "redline_exact": 20,
+   "llm_only_exact": 20
+  },
+  "none": {
+   "n": 20,
+   "redline_exact": 20,
+   "llm_only_exact": 20
+  }
+ }
+}

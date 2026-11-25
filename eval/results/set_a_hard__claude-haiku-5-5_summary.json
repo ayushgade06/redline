@@ -1,0 +1,114 @@
+{
+ "set": "set_a_hard (typed, synthetic, ground truth by construction)",
+ "baseline_model": "claude-haiku-5-5",
+ "baseline_repeats": 3,
+ "redline": {
+  "n": 60,
+  "n_with_error": 30,
+  "n_correct": 30,
+  "first_error_exact_pct": 100.0,
+  "missed_error_pct": 0.0,
+  "wrong_line_pct": 0.0,
+  "false_alarm_pct": 0.0,
+  "overall_exact_pct": 100.0,
+  "unverifiable_transitions": 0,
+  "p50_ms": 83.8,
+  "cost_usd": 0
+ },
+ "llm_only": {
+  "n": 60,
+  "n_with_error": 30,
+  "n_correct": 30,
+  "first_error_exact_pct": 100.0,
+  "missed_error_pct": 0.0,
+  "wrong_line_pct": 0.0,
+  "false_alarm_pct": 0.0,
+  "overall_exact_pct": 100.0,
+  "api_failures": 0,
+  "p50_ms": 1950,
+  "cost_usd_total": 0.0364,
+  "same_answer_all_runs_pct": 100.0,
+  "per_run_exact_pct": [
+   100.0,
+   100.0,
+   100.0
+  ]
+ },
+ "by_error_type": {
+  "binomial": {
+   "n": 2,
+   "redline_exact": 2,
+   "llm_only_exact": 2
+  },
+  "cancel": {
+   "n": 2,
+   "redline_exact": 2,
+   "llm_only_exact": 2
+  },
+  "chain_inner": {
+   "n": 4,
+   "redline_exact": 4,
+   "llm_only_exact": 4
+  },
+  "chain_trig": {
+   "n": 2,
+   "redline_exact": 2,
+   "llm_only_exact": 2
+  },
+  "combine": {
+   "n": 3,
+   "redline_exact": 3,
+   "llm_only_exact": 3
+  },
+  "divide": {
+   "n": 2,
+   "redline_exact": 2,
+   "llm_only_exact": 2
+  },
+  "factor": {
+   "n": 2,
+   "redline_exact": 2,
+   "llm_only_exact": 2
+  },
+  "lcd": {
+   "n": 2,
+   "redline_exact": 2,
+   "llm_only_exact": 2
+  },
+  "none": {
+   "n": 15,
+   "redline_exact": 15,
+   "llm_only_exact": 15
+  },
+  "none_big_leap": {
+   "n": 15,
+   "redline_exact": 15,
+   "llm_only_exact": 15
+  },
+  "one_side": {
+   "n": 3,
+   "redline_exact": 3,
+   "llm_only_exact": 3
+  },
+  "only_positive_root": {
+   "n": 1,
+   "redline_exact": 1,
+   "llm_only_exact": 1
+  },
+  "power": {
+   "n": 2,
+   "redline_exact": 2,
+   "llm_only_exact": 2
+  },
+  "sign": {
+   "n": 2,
+   "redline_exact": 2,
+   "llm_only_exact": 2
+  },
+  "sign_bracket": {
+   "n": 3,
+   "redline_exact": 3,
+   "llm_only_exact": 3
+  }
+ }
+}

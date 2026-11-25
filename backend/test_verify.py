@@ -168,3 +168,24 @@ def test_step_to_equation_with_no_real_solutions_is_an_error():
     # found by eval set A-hard: (x-2)^2 = -6 has no real roots; must be ERROR, not UNVERIFIABLE
     t = run(["x^2 - 4x - 2 = 0", "(x - 2)^2 = -6"], "solve")["transitions"][0]
     assert t["verdict"] == "ERROR" and "no real solution" in t["detail"]
+
+
+# --- untrusted input: parse_expr uses eval(), so only plain maths may reach it ---
+@pytest.mark.parametrize("evil", [
+    "__import__('os').system('echo pwned')",
+    "x.__class__",
+    "eval(1)",
+    "lambda: 1",
+    "open(1)",
+    "(x+1)**99999",
+    "x^1000000",
+    "[x for x in (1,)]",
+])
+def test_dangerous_or_huge_input_is_rejected_not_evaluated(evil):
+    r = run([evil, "x"])
+    assert r["transitions"][0]["verdict"] == "UNVERIFIABLE" and 1 in r["parse_errors"]
+
+
+def test_unicode_maths_is_normalised():
+    assert verdicts(["(x − 3)²", "x² − 6x + 9"]) == ["VALID"]
+    assert verdicts(["2·x × 3", "6x"]) == ["VALID"]

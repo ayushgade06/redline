@@ -55,12 +55,13 @@ flowchart LR
 | **Grounded, guarded hints** | The hint prompt receives only the engine's finding. A deterministic guard rejects any hint that contains the corrected line or a true solution, retries once, then falls back to a fixed hint. Level 3 comes from the engine, not the LLM. |
 | **Failure ladder** | Primary model, retry with backoff, fallback model, then a typed error the UI renders. The photo and edits are kept, and typing the lines still gets full verification without any AI. |
 | **Injection-proof by design** | Text on the paper is treated as data. The reader is told to report it, and verdicts come from SymPy, which can't be talked into anything. |
+| **Untrusted lines never reach `eval`** | SymPy's parser runs Python, so every line passes an allowlist (maths characters, known function names, exponent and size caps) first. Hostile inputs are covered by tests. |
 
 Files:
 
 ```
 backend/  app.py (FastAPI)  verify.py (SymPy, no AI)  llm.py (calls, fallback, leak guard)  prompts.py
-          test_verify.py (34 hand-computed cases)  test_app.py (15 API + failure-path tests)
+          test_verify.py (43 cases: hand-computed maths + hostile input)  test_app.py (15 API + failure-path tests)
 frontend/ Vite + React + Tailwind v4 + KaTeX     src/App.jsx  Capture.jsx  Workspace.jsx  lib.jsx
 eval/     make_synthetic.py  make_hard.py  render_samples.py  run_eval.py  data/  results/  RESULTS.md
 docs/     01-strategy.md  02-milestones.md  ai-dev-log.md
@@ -94,7 +95,7 @@ Frontend dev with hot reload: `cd frontend && npm run dev` (proxies `/api` to po
 ### Tests and evaluation
 
 ```bash
-cd backend && ../.venv/Scripts/python -m pytest -q             # 49 tests, no network needed
+cd backend && ../.venv/Scripts/python -m pytest -q             # 58 tests, no network needed
 cd .. && .venv/Scripts/python eval/make_synthetic.py            # set A (154 typed derivations)
 .venv/Scripts/python eval/make_hard.py                          # set A-hard (60)
 .venv/Scripts/python eval/run_eval.py a set_a_hard claude-sonnet-5-5 3   # Redline vs LLM-only, 3 repeats

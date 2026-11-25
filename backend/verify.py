@@ -42,6 +42,34 @@ def _local_dict(var: sp.Symbol) -> dict:
     }
 
 
+SUPERSCRIPTS = str.maketrans({"²": "**2", "³": "**3", "⁴": "**4", "−": "-", "–": "-", "·": "*", "×": "*", "÷": "/"})
+ALLOWED_NAMES = {"e", "E", "pi", "ln", "log", "sqrt", "exp", "sin", "cos", "tan", "sec", "csc", "cot",
+                 "Derivative", "diff", "Eq", "Abs", "abs", "or"}
+MAX_EXPONENT, MAX_NUMBER = 30, 10**9
+
+
+def _normalise(s: str) -> str:
+    return s.translate(SUPERSCRIPTS)
+
+
+def _check_safe(s: str, var: sp.Symbol):
+    """parse_expr runs Python eval(), and these lines come from a model or a user. Only plain maths gets through.
+    Also stops expansions so large they'd hang the server, like (x+1)**99999."""
+    if re.search(r"[^0-9A-Za-z+\-*/^().,=\s|]", s):
+        raise ParseError("contains characters that aren't maths")
+    if re.search(r"[A-Za-z_]\s*\.|\.\s*[A-Za-z_]|__", s):
+        raise ParseError("contains characters that aren't maths")
+    for name in re.findall(r"[A-Za-z]+", s):
+        if len(name) > 1 and name not in ALLOWED_NAMES:
+            raise ParseError(f"'{name}' isn't a function we know; put * between letters, e.g. 2*x*sin(x)")
+    for n in re.findall(r"\d+", s):
+        if int(n) > MAX_NUMBER:
+            raise ParseError("numbers that large aren't supported")
+    for e in re.findall(r"(?:\*\*|\^)\s*\(?\s*-?(\d+)", s):
+        if int(e) > MAX_EXPONENT:
+            raise ParseError(f"exponents above {MAX_EXPONENT} aren't supported")
+
+
 def _strip_named_lhs(eq: sp.Eq, var: sp.Symbol):
     """'y = ...', 'f(x) = ...', "dy/dx = ..." name an expression rather than state an equation."""
     lhs = eq.lhs
@@ -55,13 +83,14 @@ def parse(s: str, var: sp.Symbol, evaluate: bool = True) -> sp.Basic | list[sp.E
     """Parse one transcribed line. Returns an expression, an Eq, or a list of Eqs ("x = 2 or x = 3")."""
     if s is None or not str(s).strip():
         raise ParseError("empty line")
-    s = str(s).strip().rstrip(".,;")
+    s = _normalise(str(s)).strip().rstrip(".,;")
     # "y =", "y' =", "f(x) =", "f'(x) =", "dy/dx =" name the expression; they aren't part of the math.
     m = re.match(r"^\s*(d\w?\s*/\s*d\w|[A-Za-z]'*\s*(\(\s*\w\s*\))?)\s*=(?!=)", s)
     if m and m.group(1).strip() != var.name:
         s = s[m.end():]
     if re.search(r"[<>≤≥]|\\le|\\ge", s):
         raise ParseError("inequalities are out of scope")
+    _check_safe(s, var)
     parts = [p for p in re.split(r"\s+or\s+|\s*\|\s*|\s*\\lor\s*", s) if p]
     if len(parts) > 1:
         out = []

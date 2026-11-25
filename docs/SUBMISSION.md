@@ -35,14 +35,14 @@ divided by (x − 2), and fixes it herself. The screenshots are the `lost-root` 
 **V3: feasible for users.**
 - Needs only a phone camera and a browser; photos are shrunk on the phone before upload.
 - Cost per check: ≈ **$0.007** (≈ ₹0.6) to read the page with Claude Sonnet 5.5
-  (`eval/results/set_inj_summary.json`, `cost_usd_per_check`). The maths check itself is free. Hints cost about $0.0003 each (Haiku 5.5).
+  (`eval/results/set_inj_summary.json`, `cost_usd_per_check`). The maths check itself is free. Hints cost about $0.0002 each (Haiku 5.5; measured $0.00016 for one Hindi hint).
 - Re-checks after edits make no AI call.
 - For schools: with Prune, each student device gets an `X-Prune-Customer-Id`, so you can set a per-student spend cap.
 
 ## 2. What did you build during the event?
 Everything in the repository, all built during Nov 21–28 (the commit history starts on Nov 25):
 - the SymPy verifier, the transcription and hint pipeline with fallback, the React app, and four evaluation sets with their runner;
-- 49 automated tests.
+- 58 automated tests (43 for the verifier, including 8 hostile inputs; 15 for the API and failure paths).
 
 ## 3. How did you use AI?
 

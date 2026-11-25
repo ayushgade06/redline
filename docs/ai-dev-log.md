@@ -56,6 +56,11 @@ Format: **date · tool · what the AI produced · how it was checked · result �
 - **2026-11-25** · We expected an LLM-only checker to slip on (a) long derivations (A-hard), (b) arithmetic-heavy expansions (A-stress), and (c) instructions written on the page (set INJ).
 - **Result:** on typed steps, Claude Sonnet 5.5 and Haiku 5.5 matched SymPy, and neither was talked into saying "all correct" by on-page text. These results are reported in `eval/RESULTS.md` as they came out. Redline's case rests on what it measurably adds: correct line references on the photo, a checkable proof, determinism, and free re-checks.
 
+### 10. The parser was running `eval()` on untrusted text
+- **2026-11-25 · Claude Code (security review pass)** · SymPy's `parse_expr` evaluates Python, and the lines it parses come from the vision model and from the student's edits. A line such as `__import__('os').system(...)` could execute code on the server. `(x+1)**99999` could hang it.
+- **Check:** 8 hostile inputs added to `test_verify.py`; each must come back "can't check" without being evaluated.
+- **Decision: changed.** There is now a character allowlist, an allowlist of function names, no attribute access or dunders, and caps on exponents (30) and numbers (10⁹). Unicode maths (`−`, `²`, `·`, `×`) is normalised first. All eval sets were re-run unchanged (254/254).
+
 ---
 
 ## Still needs a human check (builder to complete before submission)
