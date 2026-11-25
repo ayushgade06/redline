@@ -94,8 +94,8 @@ Built with Claude Code (Claude Opus 5.5). `docs/ai-dev-log.md` lists 9 logged de
 - [YOU] Complete the "human check" checklist at the end of the dev log, and add one entry in your own words.
 
 ## 4. How can judges access it, and what are the results? (R1, R2)
-- **Live app:** [YOU: deployment URL]
-- **Repository:** [YOU: GitHub URL]
+- **Live app:** https://redline-maths.vercel.app (the photo-reading step needs the API key added in Vercel)
+- **Repository:** https://github.com/ayushgade06/redline
 - **R2 evidence table:**
 
 | Case | Expected | Actual | Evidence |
@@ -157,8 +157,9 @@ Until then, don't claim "signed receipts" in the submission.]
 - [ ] Competitor check, with dated screenshots (ChatGPT, Photomath, Gauth on the same wrong page)
 - [ ] Peer quotes (V1a)
 - [ ] Prune key and receipt screenshot, or remove the Prune claims
-- [ ] Public GitHub repo; `git log -p | grep -i "sk-ant\|prune_"` returns nothing
-- [ ] Deploy and test the URL logged out on a phone
+- [x] Public GitHub repo (pushed, history scanned clean); re-check before submitting: `git log -p | grep -i "sk-ant\|prune_"` returns nothing
+- [x] Deployed to https://redline-maths.vercel.app
+- [ ] [YOU] Add ANTHROPIC_API_KEY in Vercel, redeploy, and test on a phone while logged out
 - [ ] Video uploaded (unlisted is fine), embedding on, tested in incognito
 - [ ] Devpost: description, video, repo, "Built with", Best Use of Prune selected
 - [ ] Participant Contact & Sponsor Opt-In form

@@ -117,14 +117,24 @@ cd .. && .venv/Scripts/python eval/make_synthetic.py            # set A (154 typ
 
 ## Deploy
 
-One web service: FastAPI serves the built frontend.
+**Live:** https://redline-maths.vercel.app
 
-- **Build:** `pip install -r backend/requirements.txt && cd frontend && npm ci && npm run build`
-- **Start:** `cd backend && uvicorn app:app --host 0.0.0.0 --port $PORT`
-- **Environment:** `ANTHROPIC_API_KEY` or `PRUNE_API_KEY`, plus the variables in `.env.example`.
+**Vercel** (what the live app uses). `vercel.json` defines two services, a beta Vercel feature: `frontend` (the
+Vite build) and `backend` (FastAPI, entry `api/index.py`, runtime deps in the root `requirements.txt`). `/api/*`
+goes to the backend and everything else to the frontend. The project is connected to this GitHub repo, so a push
+to `main` deploys to production.
 
-`render.yaml` is included for Render. The per-IP rate limit (`RATE_LIMIT_PER_10MIN`) protects the API key on a
-public deployment; with Prune you also get per-student spend caps through `X-Prune-Customer-Id`.
+1. `npx vercel --prod` (or import the repo in the Vercel dashboard).
+2. Add `ANTHROPIC_API_KEY` (or `PRUNE_API_KEY`) under Project → Settings → Environment Variables, then redeploy.
+
+Vercel limits a request body to 4.5 MB; the app shrinks photos on the phone first, so a typical upload is under 1 MB.
+
+**Any other host:** run one process, where FastAPI serves the built frontend:
+`pip install -r backend/requirements.txt && cd frontend && npm ci && npm run build`, then
+`cd backend && uvicorn app:app --host 0.0.0.0 --port $PORT`. `render.yaml` is included for Render.
+
+The per-IP rate limit (`RATE_LIMIT_PER_10MIN`) protects the API key. It is in-memory, so on serverless it applies
+per instance. With Prune you also get per-student spend caps through `X-Prune-Customer-Id`.
 
 ## Prune (sponsor)
 

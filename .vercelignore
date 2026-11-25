@@ -3,3 +3,6 @@
 eval/results/raw
 samples/_fonts
 backend/.env
+frontend/node_modules
+frontend/dist
+docs/evidence

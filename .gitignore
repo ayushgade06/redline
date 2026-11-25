@@ -7,3 +7,5 @@ frontend/dist/
 .pytest_cache/
 eval/results/raw/
 samples/_fonts/
+
+.vercel
