@@ -118,7 +118,7 @@ function ErrorPanel({ error, onRetry, onType, onReset }) {
   const Icon = offline ? WifiOff : AlertTriangle
   const title = { provider_down: 'We couldn’t read the photo just now', bad_output: 'We couldn’t read the photo just now',
     offline: 'Can’t reach Redline', auth: 'The AI reader isn’t available', budget: 'AI spend limit reached',
-    interrupted: 'The last read didn’t finish', rate_limited: 'Too many checks in a row' }[error.code] || 'That didn’t work'
+    interrupted: 'The last read didn’t finish', rate_limited: 'Too many checks in a row', not_configured: 'Photo reading is switched off here' }[error.code] || 'That didn’t work'
   return (
     <div role="alert" className="rounded-2xl bg-paper ring-1 ring-rule p-5 sm:p-6 rise">
       <div className="flex items-start gap-3">

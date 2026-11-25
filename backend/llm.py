@@ -96,6 +96,9 @@ _clients = {}
 
 def _client():
     p = _provider()
+    if p == "anthropic" and not env("ANTHROPIC_API_KEY"):
+        raise LLMUnavailable("not_configured", "The AI reader isn't set up on this server. You can still type the lines "
+                                               "and every step will be checked.")
     if p not in _clients:
         if p == "prune":
             from openai import OpenAI
