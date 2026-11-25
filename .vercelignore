@@ -1,0 +1,5 @@
+.venv
+**/node_modules
+eval/results/raw
+samples/_fonts
+backend/.env
