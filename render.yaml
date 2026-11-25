@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: redline
+    runtime: python
+    plan: free
+    buildCommand: pip install -r backend/requirements.txt && cd frontend && npm ci && npm run build
+    startCommand: cd backend && uvicorn app:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.1
+      - key: NODE_VERSION
+        value: 22.12.0
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: PRUNE_API_KEY
+        sync: false
+      - key: MODEL_PRIMARY
+        value: claude-sonnet-5-5
+      - key: MODEL_FALLBACK
+        value: claude-haiku-5-5
+      - key: MODEL_HINT
+        value: claude-haiku-5-5
+      - key: RATE_LIMIT_PER_10MIN
+        value: "20"

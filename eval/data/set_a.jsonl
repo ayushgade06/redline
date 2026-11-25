@@ -1,0 +1,154 @@
+{"id": "expand-00", "task": "simplify", "steps": ["2*x + (x - 9)**2", "x**2 - 18*x + 2*x + 81", "x**2 - 16*x + 81"], "first_error": null, "error_type": null}
+{"id": "expand-01", "task": "simplify", "steps": ["9*x + (x + 6)**2", "x**2 + 9*x + 36"], "first_error": 2, "error_type": "binomial"}
+{"id": "expand-02", "task": "simplify", "steps": ["8*x + (x - 8)**2", "x**2 + 8*x + 64"], "first_error": 2, "error_type": "binomial"}
+{"id": "expand-03", "task": "simplify", "steps": ["7*x + (x - 4)**2", "x**2 - 8*x + 7*x + 16", "x**2 - x + 16"], "first_error": null, "error_type": null}
+{"id": "expand-04", "task": "simplify", "steps": ["x + (x - 6)**2", "x**2 + x + 36"], "first_error": 2, "error_type": "binomial"}
+{"id": "expand-05", "task": "simplify", "steps": ["x + (x - 8)**2", "x**2 + x + 64"], "first_error": 2, "error_type": "binomial"}
+{"id": "expand-06", "task": "simplify", "steps": ["x + (x - 9)**2", "x**2 - 18*x + x + 81", "x**2 - 17*x + 81"], "first_error": null, "error_type": null}
+{"id": "expand-07", "task": "simplify", "steps": ["-7*x + (x - 4)**2", "x**2 - 7*x + 16"], "first_error": 2, "error_type": "binomial"}
+{"id": "expand-08", "task": "simplify", "steps": ["5*x + (x - 1)**2", "x**2 + 5*x + 1"], "first_error": 2, "error_type": "binomial"}
+{"id": "expand-09", "task": "simplify", "steps": ["3*x + (x - 2)**2", "x**2 - 4*x + 3*x + 4", "x**2 - x + 4"], "first_error": null, "error_type": null}
+{"id": "expand-10", "task": "simplify", "steps": ["-x + (x + 3)**2", "x**2 - x + 9"], "first_error": 2, "error_type": "binomial"}
+{"id": "expand-11", "task": "simplify", "steps": ["2*x + (x - 9)**2", "x**2 + 2*x + 81"], "first_error": 2, "error_type": "binomial"}
+{"id": "expand-12", "task": "simplify", "steps": ["6*x + (x + 4)**2", "x**2 + 6*x + 8*x + 16", "x**2 + 14*x + 16"], "first_error": null, "error_type": null}
+{"id": "expand-13", "task": "simplify", "steps": ["6*x + (x - 6)**2", "x**2 + 6*x + 36"], "first_error": 2, "error_type": "binomial"}
+{"id": "product-00", "task": "simplify", "steps": ["(x - 2)*(x + 5)", "x**2 - 2*x + 5*x - 10", "x**2 + 3*x - 10"], "first_error": null, "error_type": null}
+{"id": "product-01", "task": "simplify", "steps": ["(x - 3)*(x + 6)", "x**2 - 6*x - 3*x - 18"], "first_error": 2, "error_type": "sign"}
+{"id": "product-02", "task": "simplify", "steps": ["(x - 8)*(x - 3)", "x**2 - 3*x + 8*x + 24"], "first_error": 2, "error_type": "sign"}
+{"id": "product-03", "task": "simplify", "steps": ["(x - 7)*(x + 7)", "x**2 - 7*x + 7*x - 49", "x**2 - 49"], "first_error": null, "error_type": null}
+{"id": "product-04", "task": "simplify", "steps": ["(x - 6)**2", "x**2 - 6*x + 6*x + 36"], "first_error": 2, "error_type": "sign"}
+{"id": "product-05", "task": "simplify", "steps": ["(x - 4)*(x + 9)", "x**2 - 9*x - 4*x - 36"], "first_error": 2, "error_type": "sign"}
+{"id": "product-06", "task": "simplify", "steps": ["(x - 3)*(x + 6)", "x**2 - 3*x + 6*x - 18", "x**2 + 3*x - 18"], "first_error": null, "error_type": null}
+{"id": "product-07", "task": "simplify", "steps": ["(x + 1)*(x + 6)", "x**2 + x + 6*x + 6", "x**2 + 8*x + 6"], "first_error": 3, "error_type": "arith"}
+{"id": "product-08", "task": "simplify", "steps": ["(x - 9)*(x - 4)", "x**2 - 9*x - 4*x + 36", "x**2 - 12*x + 36"], "first_error": 3, "error_type": "arith"}
+{"id": "product-09", "task": "simplify", "steps": ["(x - 6)*(x + 2)", "x**2 - 6*x + 2*x - 12", "x**2 - 4*x - 12"], "first_error": null, "error_type": null}
+{"id": "product-10", "task": "simplify", "steps": ["(x - 1)*(x + 8)", "x**2 + x + 8*x - 8"], "first_error": 2, "error_type": "sign"}
+{"id": "product-11", "task": "simplify", "steps": ["(x - 1)*(x + 5)", "x**2 + x + 5*x - 5"], "first_error": 2, "error_type": "sign"}
+{"id": "product-12", "task": "simplify", "steps": ["(x - 7)*(x - 2)", "x**2 - 7*x - 2*x + 14", "x**2 - 9*x + 14"], "first_error": null, "error_type": null}
+{"id": "product-13", "task": "simplify", "steps": ["(x - 2)*(x + 3)", "x**2 + 2*x + 3*x - 6"], "first_error": 2, "error_type": "sign"}
+{"id": "distribute-00", "task": "simplify", "steps": ["(-6*x - 48) + (4*x + 28)", "-6*x + 4*x - 48 + 28", "(-6*x - 48) + (4*x + 28)"], "first_error": null, "error_type": null}
+{"id": "distribute-01", "task": "simplify", "steps": ["(-x - 4) + (x + 9)", "-x + x - 4 + 9", "6"], "first_error": 3, "error_type": "arith"}
+{"id": "distribute-02", "task": "simplify", "steps": ["(10 - 5*x) + (4*x - 4)", "-5*x + 4*x - 4 + 10", "7 - x"], "first_error": 3, "error_type": "arith"}
+{"id": "distribute-03", "task": "simplify", "steps": ["(-6*x - 12) + (x + 5)", "-6*x + x - 12 + 5", "(-6*x - 12) + (x + 5)"], "first_error": null, "error_type": null}
+{"id": "distribute-04", "task": "simplify", "steps": ["(2 - x) + (2*x - 6)", "-x + 2*x - 6 + 2", "x - 3"], "first_error": 3, "error_type": "arith"}
+{"id": "distribute-05", "task": "simplify", "steps": ["(-x - 9) + (5*x - 40)", "-x + 5*x - 40 + 9"], "first_error": 2, "error_type": "sign"}
+{"id": "distribute-06", "task": "simplify", "steps": ["(-x - 8) + (4*x + 36)", "-x + 4*x - 8 + 36", "(-x - 8) + (4*x + 36)"], "first_error": null, "error_type": null}
+{"id": "distribute-07", "task": "simplify", "steps": ["(6 - 6*x) + (6*x - 48)", "-6*x + 6*x - 48 + 6", "-41"], "first_error": 3, "error_type": "arith"}
+{"id": "distribute-08", "task": "simplify", "steps": ["(15 - 5*x) + (3*x + 9)", "-5*x + 3*x - 15 + 9"], "first_error": 2, "error_type": "sign"}
+{"id": "distribute-09", "task": "simplify", "steps": ["(-6*x - 18) + (x - 8)", "-6*x + x - 18 - 8", "(-6*x - 18) + (x - 8)"], "first_error": null, "error_type": null}
+{"id": "distribute-10", "task": "simplify", "steps": ["(-6*x - 24) + (4*x + 16)", "-6*x + 4*x - 24 + 16", "-2*x - 7"], "first_error": 3, "error_type": "arith"}
+{"id": "distribute-11", "task": "simplify", "steps": ["(30 - 6*x) + (5*x + 10)", "-6*x + 5*x - 30 + 10"], "first_error": 2, "error_type": "sign"}
+{"id": "distribute-12", "task": "simplify", "steps": ["(28 - 4*x) + (6*x + 30)", "-4*x + 6*x + 28 + 30", "(28 - 4*x) + (6*x + 30)"], "first_error": null, "error_type": null}
+{"id": "distribute-13", "task": "simplify", "steps": ["(-3*x - 27) + (4*x + 24)", "-3*x + 4*x - 27 + 24", "x - 2"], "first_error": 3, "error_type": "arith"}
+{"id": "factor-00", "task": "simplify", "steps": ["x**2 - 3*x - 10", "(x - 5)*(x + 2)"], "first_error": null, "error_type": null}
+{"id": "factor-01", "task": "simplify", "steps": ["x**2 - 11*x + 30", "(x - 5)*(x + 6)"], "first_error": 2, "error_type": "sign"}
+{"id": "factor-02", "task": "simplify", "steps": ["x**2 + 3*x - 28", "(x - 7)*(x - 4)"], "first_error": 2, "error_type": "sign"}
+{"id": "factor-03", "task": "simplify", "steps": ["x**2 + 4*x - 21", "(x - 3)*(x + 7)"], "first_error": null, "error_type": null}
+{"id": "factor-04", "task": "simplify", "steps": ["x**2 - 2*x - 3", "(x - 3)*(x - 1)"], "first_error": 2, "error_type": "sign"}
+{"id": "factor-05", "task": "simplify", "steps": ["x**2 + 3*x - 10", "(x + 2)*(x + 5)"], "first_error": 2, "error_type": "sign"}
+{"id": "factor-06", "task": "simplify", "steps": ["x**2 + 3*x - 10", "(x - 2)*(x + 5)"], "first_error": null, "error_type": null}
+{"id": "factor-07", "task": "simplify", "steps": ["x**2 - x - 2", "(x - 2)*(x - 1)"], "first_error": 2, "error_type": "sign"}
+{"id": "factor-08", "task": "simplify", "steps": ["x**2 - 2*x - 8", "(x - 4)*(x - 2)"], "first_error": 2, "error_type": "sign"}
+{"id": "factor-09", "task": "simplify", "steps": ["x**2 + 2*x - 8", "(x - 2)*(x + 4)"], "first_error": null, "error_type": null}
+{"id": "factor-10", "task": "simplify", "steps": ["x**2 + 3*x - 10", "(x + 2)*(x + 5)"], "first_error": 2, "error_type": "sign"}
+{"id": "factor-11", "task": "simplify", "steps": ["x**2 + 5*x + 6", "(x - 3)*(x + 2)"], "first_error": 2, "error_type": "sign"}
+{"id": "factor-12", "task": "simplify", "steps": ["x**2 - 9*x + 20", "(x - 5)*(x - 4)"], "first_error": null, "error_type": null}
+{"id": "factor-13", "task": "simplify", "steps": ["x**2 - 3*x - 4", "(x + 1)*(x + 4)"], "first_error": 2, "error_type": "sign"}
+{"id": "linear-00", "task": "solve", "steps": ["Eq(9*x + 6, 4)", "Eq(9*x, -2)", "Eq(x, -2/9)"], "first_error": null, "error_type": null}
+{"id": "linear-01", "task": "solve", "steps": ["Eq(7*x + 6, -3)", "Eq(7*x, 3)", "Eq(x, 3/7)"], "first_error": 2, "error_type": "move"}
+{"id": "linear-02", "task": "solve", "steps": ["Eq(2*x + 2, 6)", "Eq(2*x, 4)", "Eq(x, 3)"], "first_error": 3, "error_type": "arith"}
+{"id": "linear-03", "task": "solve", "steps": ["Eq(3*x + 9, -5)", "Eq(3*x, -14)", "Eq(x, -14/3)"], "first_error": null, "error_type": null}
+{"id": "linear-04", "task": "solve", "steps": ["Eq(6*x + 7, 1)", "Eq(6*x, -6)", "Eq(x, 0)"], "first_error": 3, "error_type": "arith"}
+{"id": "linear-05", "task": "solve", "steps": ["Eq(8*x + 8, -8)", "Eq(8*x, -16)", "Eq(x, -1)"], "first_error": 3, "error_type": "arith"}
+{"id": "linear-06", "task": "solve", "steps": ["Eq(2*x + 1, 7)", "Eq(2*x, 6)", "Eq(x, 3)"], "first_error": null, "error_type": null}
+{"id": "linear-07", "task": "solve", "steps": ["Eq(7*x + 2, -8)", "Eq(7*x, -10)", "Eq(x, -3/7)"], "first_error": 3, "error_type": "arith"}
+{"id": "linear-08", "task": "solve", "steps": ["Eq(7*x + 2, -3)", "Eq(7*x, -1)", "Eq(x, -1/7)"], "first_error": 2, "error_type": "move"}
+{"id": "linear-09", "task": "solve", "steps": ["Eq(9*x - 5, -3)", "Eq(9*x, 2)", "Eq(x, 2/9)"], "first_error": null, "error_type": null}
+{"id": "linear-10", "task": "solve", "steps": ["Eq(8*x - 7, 9)", "Eq(8*x, 2)", "Eq(x, 1/4)"], "first_error": 2, "error_type": "move"}
+{"id": "linear-11", "task": "solve", "steps": ["Eq(4*x - 6, 7)", "Eq(4*x, 1)", "Eq(x, 1/4)"], "first_error": 2, "error_type": "move"}
+{"id": "linear-12", "task": "solve", "steps": ["Eq(5*x + 4, -7)", "Eq(5*x, -11)", "Eq(x, -11/5)"], "first_error": null, "error_type": null}
+{"id": "linear-13", "task": "solve", "steps": ["Eq(4*x - 2, -2)", "Eq(4*x, -4)", "Eq(x, -1)"], "first_error": 2, "error_type": "move"}
+{"id": "linear_brackets-00", "task": "solve", "steps": ["Eq(3*x - 18, -7)", "Eq(3*x - 18, -7)", "Eq(3*x, 11)", "Eq(x, 11/3)"], "first_error": null, "error_type": null}
+{"id": "linear_brackets-01", "task": "solve", "steps": ["Eq(3*x + 6, 7)", "Eq(3*x + 6, 7)", "Eq(3*x, 13)", "Eq(x, 13/3)"], "first_error": 3, "error_type": "move"}
+{"id": "linear_brackets-02", "task": "solve", "steps": ["Eq(6*x - 36, 1)", "Eq(6*x - 36, 1)", "Eq(6*x, -35)", "Eq(x, -35/6)"], "first_error": 3, "error_type": "move"}
+{"id": "linear_brackets-03", "task": "solve", "steps": ["Eq(5*x + 15, 8)", "Eq(5*x + 15, 8)", "Eq(5*x, -7)", "Eq(x, -7/5)"], "first_error": null, "error_type": null}
+{"id": "linear_brackets-04", "task": "solve", "steps": ["Eq(3*x - 21, -1)", "Eq(3*x - 21, -1)", "Eq(3*x, -22)", "Eq(x, -22/3)"], "first_error": 3, "error_type": "move"}
+{"id": "linear_brackets-05", "task": "solve", "steps": ["Eq(6*x + 18, 5)", "Eq(6*x + 3, 5)", "Eq(x, 1/3)"], "first_error": 2, "error_type": "distribute"}
+{"id": "linear_brackets-06", "task": "solve", "steps": ["Eq(6*x - 36, -7)", "Eq(6*x - 36, -7)", "Eq(6*x, 29)", "Eq(x, 29/6)"], "first_error": null, "error_type": null}
+{"id": "linear_brackets-07", "task": "solve", "steps": ["Eq(2*x + 4, 8)", "Eq(2*x + 2, 8)", "Eq(x, 3)"], "first_error": 2, "error_type": "distribute"}
+{"id": "linear_brackets-08", "task": "solve", "steps": ["Eq(2*x - 4, 3)", "Eq(2*x - 2, 3)", "Eq(x, 5/2)"], "first_error": 2, "error_type": "distribute"}
+{"id": "linear_brackets-09", "task": "solve", "steps": ["Eq(4*x - 36, 1)", "Eq(4*x - 36, 1)", "Eq(4*x, 37)", "Eq(x, 37/4)"], "first_error": null, "error_type": null}
+{"id": "linear_brackets-10", "task": "solve", "steps": ["Eq(3*x + 18, 7)", "Eq(3*x + 18, 7)", "Eq(3*x, 25)", "Eq(x, 25/3)"], "first_error": 3, "error_type": "move"}
+{"id": "linear_brackets-11", "task": "solve", "steps": ["Eq(2*x - 8, -8)", "Eq(2*x - 8, -8)", "Eq(2*x, -16)", "Eq(x, -8)"], "first_error": 3, "error_type": "move"}
+{"id": "linear_brackets-12", "task": "solve", "steps": ["Eq(2*x + 4, -7)", "Eq(2*x + 4, -7)", "Eq(2*x, -11)", "Eq(x, -11/2)"], "first_error": null, "error_type": null}
+{"id": "linear_brackets-13", "task": "solve", "steps": ["Eq(6*x - 48, 8)", "Eq(6*x - 48, 8)", "Eq(6*x, -40)", "Eq(x, -20/3)"], "first_error": 3, "error_type": "move"}
+{"id": "quadratic-00", "task": "solve", "steps": ["Eq(x**2 + 4*x - 12, 0)", "Eq((x - 2)*(x + 6), 0)", "Eq(x, -6) or Eq(x, 2)"], "first_error": null, "error_type": null}
+{"id": "quadratic-01", "task": "solve", "steps": ["Eq(x**2 - 6*x - 7, 0)", "Eq((x + 1)*(x + 7), 0)", "Eq(x, -7) or Eq(x, -1)"], "first_error": 2, "error_type": "sign"}
+{"id": "quadratic-02", "task": "solve", "steps": ["Eq(x**2 - 2*x - 8, 0)", "Eq((x + 2)*(x + 4), 0)", "Eq(x, -4) or Eq(x, -2)"], "first_error": 2, "error_type": "sign"}
+{"id": "quadratic-03", "task": "solve", "steps": ["Eq(x**2 + x - 20, 0)", "Eq((x - 4)*(x + 5), 0)", "Eq(x, -5) or Eq(x, 4)"], "first_error": null, "error_type": null}
+{"id": "quadratic-04", "task": "solve", "steps": ["Eq(x**2 + 5*x + 4, 0)", "Eq((x - 4)*(x + 1), 0)", "Eq(x, -1) or Eq(x, 4)"], "first_error": 2, "error_type": "sign"}
+{"id": "quadratic-05", "task": "solve", "steps": ["Eq(x**2 + 3*x - 4, 0)", "Eq((x + 1)*(x + 4), 0)", "Eq(x, -4) or Eq(x, -1)"], "first_error": 2, "error_type": "sign"}
+{"id": "quadratic-06", "task": "solve", "steps": ["Eq(x**2 - 2*x - 3, 0)", "Eq((x - 3)*(x + 1), 0)", "Eq(x, 3) or Eq(x, -1)"], "first_error": null, "error_type": null}
+{"id": "quadratic-07", "task": "solve", "steps": ["Eq(x**2 - 9*x + 20, 0)", "Eq((x - 5)*(x + 4), 0)", "Eq(x, -4) or Eq(x, 5)"], "first_error": 2, "error_type": "sign"}
+{"id": "quadratic-08", "task": "solve", "steps": ["Eq(x**2 + 7*x + 10, 0)", "Eq((x - 2)*(x + 5), 0)", "Eq(x, -5) or Eq(x, 2)"], "first_error": 2, "error_type": "sign"}
+{"id": "quadratic-09", "task": "solve", "steps": ["Eq(x**2 - 5*x - 6, 0)", "Eq((x - 6)*(x + 1), 0)", "Eq(x, -1) or Eq(x, 6)"], "first_error": null, "error_type": null}
+{"id": "quadratic-10", "task": "solve", "steps": ["Eq(x**2 + x - 20, 0)", "Eq((x + 4)*(x + 5), 0)", "Eq(x, -5) or Eq(x, -4)"], "first_error": 2, "error_type": "sign"}
+{"id": "quadratic-11", "task": "solve", "steps": ["Eq(x**2 - 3*x - 18, 0)", "Eq((x - 6)*(x - 3), 0)", "Eq(x, 3) or Eq(x, 6)"], "first_error": 2, "error_type": "sign"}
+{"id": "quadratic-12", "task": "solve", "steps": ["Eq(x**2 - 3*x - 18, 0)", "Eq((x - 6)*(x + 3), 0)", "Eq(x, -3) or Eq(x, 6)"], "first_error": null, "error_type": null}
+{"id": "quadratic-13", "task": "solve", "steps": ["Eq(x**2 - x - 12, 0)", "Eq((x + 3)*(x + 4), 0)", "Eq(x, -4) or Eq(x, -3)"], "first_error": 2, "error_type": "sign"}
+{"id": "lost_root-00", "task": "solve", "steps": ["Eq(x*(x - 4), 5*x - 20)", "Eq(x*(x - 4) - 5*x + 20, 0)", "Eq((x - 5)*(x - 4), 0)", "Eq(x, 4) or Eq(x, 5)"], "first_error": null, "error_type": null}
+{"id": "lost_root-01", "task": "solve", "steps": ["Eq(x*(x - 2), 6 - 3*x)", "Eq(x, -3)"], "first_error": 2, "error_type": "divide"}
+{"id": "lost_root-02", "task": "solve", "steps": ["Eq(x*(x + 4), 2*x + 8)", "Eq(x, 2)"], "first_error": 2, "error_type": "divide"}
+{"id": "lost_root-03", "task": "solve", "steps": ["Eq(x*(x - 6), 2*x - 12)", "Eq(x*(x - 6) - 2*x + 12, 0)", "Eq((x - 6)*(x - 2), 0)", "Eq(x, 6) or Eq(x, 2)"], "first_error": null, "error_type": null}
+{"id": "lost_root-04", "task": "solve", "steps": ["Eq(x*(x + 2), -3*x - 6)", "Eq(x, -3)"], "first_error": 2, "error_type": "divide"}
+{"id": "lost_root-05", "task": "solve", "steps": ["Eq(x*(x + 1), 5*x + 5)", "Eq(x, 5)"], "first_error": 2, "error_type": "divide"}
+{"id": "lost_root-06", "task": "solve", "steps": ["Eq(x*(x + 5), -6*x - 30)", "Eq(x*(x + 5) + 6*x + 30, 0)", "Eq((x + 5)*(x + 6), 0)", "Eq(x, -5) or Eq(x, -6)"], "first_error": null, "error_type": null}
+{"id": "lost_root-07", "task": "solve", "steps": ["Eq(x*(x + 2), -x - 2)", "Eq(x, -1)"], "first_error": 2, "error_type": "divide"}
+{"id": "lost_root-08", "task": "solve", "steps": ["Eq(x*(x - 5), 2*x - 10)", "Eq(x, 2)"], "first_error": 2, "error_type": "divide"}
+{"id": "lost_root-09", "task": "solve", "steps": ["Eq(x*(x - 3), 5*x - 15)", "Eq(x*(x - 3) - 5*x + 15, 0)", "Eq((x - 5)*(x - 3), 0)", "Eq(x, 3) or Eq(x, 5)"], "first_error": null, "error_type": null}
+{"id": "lost_root-10", "task": "solve", "steps": ["Eq(x*(x - 2), 4 - 2*x)", "Eq(x, -2)"], "first_error": 2, "error_type": "divide"}
+{"id": "lost_root-11", "task": "solve", "steps": ["Eq(x*(x + 6), -x - 6)", "Eq(x, -1)"], "first_error": 2, "error_type": "divide"}
+{"id": "lost_root-12", "task": "solve", "steps": ["Eq(x*(x + 2), 4*x + 8)", "Eq(x*(x + 2) - 4*x - 8, 0)", "Eq((x - 4)*(x + 2), 0)", "Eq(x, -2) or Eq(x, 4)"], "first_error": null, "error_type": null}
+{"id": "lost_root-13", "task": "solve", "steps": ["Eq(x*(x - 2), 5*x - 10)", "Eq(x, 5)"], "first_error": 2, "error_type": "divide"}
+{"id": "power_rule-00", "task": "differentiate", "steps": ["6*x**5 - 5*x", "30*x**4 - 5"], "first_error": null, "error_type": null}
+{"id": "power_rule-01", "task": "differentiate", "steps": ["3*x**2 + 3*x", "6*x**2 + 3"], "first_error": 2, "error_type": "power"}
+{"id": "power_rule-02", "task": "differentiate", "steps": ["2*x**4 + 2*x", "8*x**4 + 2"], "first_error": 2, "error_type": "power"}
+{"id": "power_rule-03", "task": "differentiate", "steps": ["2*x**2 + 5*x", "4*x + 5"], "first_error": null, "error_type": null}
+{"id": "power_rule-04", "task": "differentiate", "steps": ["3*x**5 + 4*x", "15*x**5 + 4"], "first_error": 2, "error_type": "power"}
+{"id": "power_rule-05", "task": "differentiate", "steps": ["3*x**5 + 2*x", "15*x**5 + 2"], "first_error": 2, "error_type": "power"}
+{"id": "power_rule-06", "task": "differentiate", "steps": ["4*x**4 - 6*x", "16*x**3 - 6"], "first_error": null, "error_type": null}
+{"id": "power_rule-07", "task": "differentiate", "steps": ["x**4 - x", "4*x**4 - 1"], "first_error": 2, "error_type": "power"}
+{"id": "power_rule-08", "task": "differentiate", "steps": ["3*x**3 - 3*x", "9*x**3 - 3"], "first_error": 2, "error_type": "power"}
+{"id": "power_rule-09", "task": "differentiate", "steps": ["4*x**2 + 3*x", "8*x + 3"], "first_error": null, "error_type": null}
+{"id": "power_rule-10", "task": "differentiate", "steps": ["2*x**2 + 9*x", "4*x**2 + 9"], "first_error": 2, "error_type": "power"}
+{"id": "power_rule-11", "task": "differentiate", "steps": ["2*x**3 + 5*x", "6*x**3 + 5"], "first_error": 2, "error_type": "power"}
+{"id": "power_rule-12", "task": "differentiate", "steps": ["3*x**2 - 8*x", "6*x - 8"], "first_error": null, "error_type": null}
+{"id": "power_rule-13", "task": "differentiate", "steps": ["6*x**2 + 8*x", "12*x**2 + 8"], "first_error": 2, "error_type": "power"}
+{"id": "product_rule-00", "task": "differentiate", "steps": ["x**3*cos(x)", "-x**3*sin(x) + 3*x**2*cos(x)"], "first_error": null, "error_type": null}
+{"id": "product_rule-01", "task": "differentiate", "steps": ["x**2*exp(x)", "2*x*exp(x)"], "first_error": 2, "error_type": "product"}
+{"id": "product_rule-02", "task": "differentiate", "steps": ["x**4*sin(x)", "4*x**3*cos(x)"], "first_error": 2, "error_type": "product"}
+{"id": "product_rule-03", "task": "differentiate", "steps": ["x**2*exp(x)", "x**2*exp(x) + 2*x*exp(x)"], "first_error": null, "error_type": null}
+{"id": "product_rule-04", "task": "differentiate", "steps": ["x**2*cos(x)", "-2*x*sin(x)"], "first_error": 2, "error_type": "product"}
+{"id": "product_rule-05", "task": "differentiate", "steps": ["x**4*cos(x)", "-4*x**3*sin(x)"], "first_error": 2, "error_type": "product"}
+{"id": "product_rule-06", "task": "differentiate", "steps": ["x**4*exp(x)", "x**4*exp(x) + 4*x**3*exp(x)"], "first_error": null, "error_type": null}
+{"id": "product_rule-07", "task": "differentiate", "steps": ["x**4*sin(x)", "4*x**3*cos(x)"], "first_error": 2, "error_type": "product"}
+{"id": "product_rule-08", "task": "differentiate", "steps": ["x**3*exp(x)", "3*x**2*exp(x)"], "first_error": 2, "error_type": "product"}
+{"id": "product_rule-09", "task": "differentiate", "steps": ["x**2*cos(x)", "-x**2*sin(x) + 2*x*cos(x)"], "first_error": null, "error_type": null}
+{"id": "product_rule-10", "task": "differentiate", "steps": ["x**3*exp(x)", "3*x**2*exp(x)"], "first_error": 2, "error_type": "product"}
+{"id": "product_rule-11", "task": "differentiate", "steps": ["x**3*exp(x)", "3*x**2*exp(x)"], "first_error": 2, "error_type": "product"}
+{"id": "product_rule-12", "task": "differentiate", "steps": ["x**3*sin(x)", "x**3*cos(x) + 3*x**2*sin(x)"], "first_error": null, "error_type": null}
+{"id": "product_rule-13", "task": "differentiate", "steps": ["x**2*sin(x)", "2*x*cos(x)"], "first_error": 2, "error_type": "product"}
+{"id": "chain_rule-00", "task": "differentiate", "steps": ["sin(5*x**2)", "10*x*cos(5*x**2)"], "first_error": null, "error_type": null}
+{"id": "chain_rule-01", "task": "differentiate", "steps": ["sin(2*x**2)", "cos(2*x**2)"], "first_error": 2, "error_type": "chain"}
+{"id": "chain_rule-02", "task": "differentiate", "steps": ["cos(5*x**3)", "-sin(5*x**3)"], "first_error": 2, "error_type": "chain"}
+{"id": "chain_rule-03", "task": "differentiate", "steps": ["sin(4*x**4)", "16*x**3*cos(4*x**4)"], "first_error": null, "error_type": null}
+{"id": "chain_rule-04", "task": "differentiate", "steps": ["sin(2*x**4)", "cos(2*x**4)"], "first_error": 2, "error_type": "chain"}
+{"id": "chain_rule-05", "task": "differentiate", "steps": ["sin(4*x**4)", "cos(4*x**4)"], "first_error": 2, "error_type": "chain"}
+{"id": "chain_rule-06", "task": "differentiate", "steps": ["cos(5*x**2)", "-10*x*sin(5*x**2)"], "first_error": null, "error_type": null}
+{"id": "chain_rule-07", "task": "differentiate", "steps": ["cos(5*x**2)", "-sin(5*x**2)"], "first_error": 2, "error_type": "chain"}
+{"id": "chain_rule-08", "task": "differentiate", "steps": ["sin(4*x**3)", "cos(4*x**3)"], "first_error": 2, "error_type": "chain"}
+{"id": "chain_rule-09", "task": "differentiate", "steps": ["cos(5*x**4)", "-20*x**3*sin(5*x**4)"], "first_error": null, "error_type": null}
+{"id": "chain_rule-10", "task": "differentiate", "steps": ["sin(4*x**3)", "cos(4*x**3)"], "first_error": 2, "error_type": "chain"}
+{"id": "chain_rule-11", "task": "differentiate", "steps": ["sin(2*x**3)", "cos(2*x**3)"], "first_error": 2, "error_type": "chain"}
+{"id": "chain_rule-12", "task": "differentiate", "steps": ["exp(5*x**4)", "20*x**3*exp(5*x**4)"], "first_error": null, "error_type": null}
+{"id": "chain_rule-13", "task": "differentiate", "steps": ["sin(2*x**4)", "cos(2*x**4)"], "first_error": 2, "error_type": "chain"}

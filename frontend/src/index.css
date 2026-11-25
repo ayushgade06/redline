@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Schibsted Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-pen: "Caveat", "Segoe Print", cursive;
+
+  --color-desk: #eef2f7;
+  --color-grid: #dce4ee;
+  --color-paper: #fbfcfe;
+  --color-ink: #1b2a5e;
+  --color-ink-soft: #3d4a76;
+  --color-pencil: #6b7488;
+  --color-rule: #d5dce8;
+  --color-pen: #d62f2f;
+  --color-pen-soft: #fdecec;
+  --color-marker: #ffe45c;
+  --color-marker-ink: #5c4a00;
+  --color-tick: #2e7d5b;
+  --color-tick-soft: #e6f3ec;
+}
+
+:root { color-scheme: light; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background-color: var(--color-desk);
+  /* graph paper: the surface maths homework is done on */
+  background-image:
+    linear-gradient(var(--color-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  background-position: -1px -1px;
+}
+
+::selection { background: var(--color-marker); color: var(--color-ink); }
+
+:focus-visible { outline: 2.5px solid var(--color-ink); outline-offset: 2px; border-radius: 6px; }
+
+.katex { font-size: 1.12em; }
+
+/* The red pen stroke under the wrong line: the one piece of motion on the page. */
+.pen-stroke {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  animation: pen 700ms cubic-bezier(.6,.05,.3,1) 150ms forwards;
+}
+@keyframes pen { to { stroke-dashoffset: 0; } }
+
+.marker-wash { background: color-mix(in srgb, var(--color-marker) 55%, transparent); mix-blend-mode: multiply; }
+
+@keyframes rise { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+.rise { animation: rise 220ms ease-out both; }
+
+@keyframes shimmer { from { background-position: -200px 0; } to { background-position: 200px 0; } }
+.skeleton {
+  background: linear-gradient(90deg, #e6ebf3 0, #f3f6fa 80px, #e6ebf3 160px) no-repeat;
+  background-size: 400px 100%;
+  background-color: #e6ebf3;
+  animation: shimmer 1.2s linear infinite;
+}
+
+@keyframes scan { from { top: 0%; } to { top: 100%; } }
+.scanline { animation: scan 1.6s ease-in-out infinite alternate; }
+
+@media (prefers-reduced-motion: reduce) {
+  .pen-stroke { animation: none; stroke-dashoffset: 0; }
+  .rise, .skeleton, .scanline { animation: none; }
+}
