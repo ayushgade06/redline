@@ -1,5 +1,19 @@
 # Redline: Architecture & Milestone Plan
 
+## Status (updated 2026-11-25, end of build session 1)
+
+| Milestone | Status | Notes |
+|---|---|---|
+| M0 setup | 🟡 partial | Repo, venv, Vite, `.env.example` and AI dev log are done. **You:** Prune sign-up and coupon, competitor screenshots, peer quotes, set B photos. |
+| M1 verifier | ✅ done | `backend/verify.py`, 34 hand-computed tests; set A 154/154, 0 false alarms |
+| M2 transcription and bake-off | 🟡 partial | `llm.py` with JSON retry and fallback done. Bake-off run on rendered samples only (all models 100%, so not discriminative). **Needs set B photos** for the real A1 table and τ tuning. |
+| M3 pipeline, hints, failures | ✅ done | `/api/transcribe`, `/verify`, `/hint`; leak guard; typed errors. Real timeout and bad-key runs recorded. 15 API tests. Prune code path written but untested without a key. |
+| M4 frontend | ✅ done | Capture, confirm and result screens; photo↔line linking; highlighter on low-confidence lines; red-pen underline; hint ladder in EN/HI/MR; live re-check; localStorage persistence; mobile layout |
+| M5 evaluation | 🟡 partial | Sets A, A-hard, A-stress (typed) and INJ (rendered photos) done, Redline vs LLM-only with repeats; see `eval/RESULTS.md`. **Needs set B real photos** and the R2 repeat run on a re-photographed page. |
+| M6 deploy and README | 🟡 partial | README, `render.yaml` and requirements done. **Deploy needs your go-ahead** (public URL spends your API key). |
+| M7 video | ⬜ not started | Script beats are below; `docs/SUBMISSION.md` has the shot list |
+| M8 submit | ⬜ not started | Checklist in `docs/SUBMISSION.md` |
+
 > Companion to `01-strategy.md`.
 > **Hard deadline: Nov 29, 04:30 IST** (Nov 28, 3 PM PST). **Target submit: Nov 28, 22:00 IST.** **Feature freeze: Nov 28, 12:00 IST.**
 > Rule for every hour: *if it doesn't produce a rubric checkbox's evidence or the main flow, it waits.*

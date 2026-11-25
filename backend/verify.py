@@ -24,7 +24,7 @@ from sympy.parsing.sympy_parser import (
 )
 
 TRANSFORMS = standard_transformations + (implicit_multiplication_application, convert_xor)
-N_POINTS = 8
+N_POINTS = 10  # agreeing points needed for "equal": the 5 simple ones + 5 seeded random
 TOL = 1e-7
 SUPPORTED_TASKS = {"solve", "simplify", "differentiate"}
 
@@ -106,9 +106,12 @@ def _num(expr: sp.Expr, var: sp.Symbol, x0: float) -> complex | None:
     return v
 
 
+SIMPLE = [2, -1, 3, 0.5, -2]  # tried first, so a counterexample is one a student can check by hand
+
+
 def _points(seed_src: str) -> list[float]:
     rng = random.Random(seed_src)  # deterministic per transition, so repeat runs agree
-    return [round(rng.uniform(-3.0, 3.0), 6) or 0.5 for _ in range(N_POINTS * 3)]
+    return SIMPLE + [round(rng.uniform(-3.0, 3.0), 6) or 0.5 for _ in range(N_POINTS * 3)]
 
 
 def _numeric_compare(a: sp.Expr, b: sp.Expr, var: sp.Symbol):
@@ -194,7 +197,8 @@ def check_eq(e1, e2, var: sp.Symbol) -> dict:
     if s1 == s2:
         return {"verdict": "VALID", "detail": f"Same solution set {_fmt_set(s1)}."}
     lost, extra = s1 - s2, s2 - s1
-    base = {"prev_solutions": _fmt_set(s1), "this_solutions": _fmt_set(s2)}
+    base = {"prev_solutions": _fmt_set(s1), "this_solutions": _fmt_set(s2),
+            "prev_solutions_latex": _latex_set(s1, var), "this_solutions_latex": _latex_set(s2, var)}
     if lost and not extra and s2:  # some, not all, solutions dropped
         return {**base, "verdict": "ROOT_CHANGE", "lost": [sp.sstr(v) for v in lost],
                 "detail": f"This step lost the solution {var} = {', '.join(sp.sstr(v) for v in lost)} "
@@ -205,7 +209,10 @@ def check_eq(e1, e2, var: sp.Symbol) -> dict:
                           f"(solutions went from {_fmt_set(s1)} to {_fmt_set(s2)})."}
     res = {**base, "verdict": "ERROR",
            "detail": f"Solutions changed from {_fmt_set(s1)} to {_fmt_set(s2)}, so this step isn't equivalent."}
-    exp = _expected_one_side(e1, e2, var)
+    exp, side = _expected_one_side(e1, e2, var)
+    if side:  # concrete evidence: the side the student rewrote changes value
+        old, new = (e1.lhs, e2.lhs) if side == "left" else (e1.rhs, e2.rhs)
+        res["side"], res["witness"] = side, _numeric_compare(old.doit(), new.doit(), var)[1]
     if exp is None:
         exp = _expected_eq(e2, s1, var)
     if exp is not None:
@@ -220,12 +227,12 @@ def _same(a, b, var) -> bool:
 def _expected_one_side(e1, e2, var):
     """If the student only rewrote one side, the correct line is that side rewritten correctly."""
     if isinstance(e1, list) or isinstance(e2, list):
-        return None
+        return None, None
     if _same(e1.rhs, e2.rhs, var) and not _same(e1.lhs, e2.lhs, var):
-        return sp.Eq(_expected_form(e1.lhs, e2.lhs), e2.rhs, evaluate=False)
+        return sp.Eq(_expected_form(e1.lhs, e2.lhs), e2.rhs, evaluate=False), "left"
     if _same(e1.lhs, e2.lhs, var) and not _same(e1.rhs, e2.rhs, var):
-        return sp.Eq(e2.lhs, _expected_form(e1.rhs, e2.rhs), evaluate=False)
-    return None
+        return sp.Eq(e2.lhs, _expected_form(e1.rhs, e2.rhs), evaluate=False), "right"
+    return None, None
 
 
 def _expected_eq(e2, s1, var):
@@ -295,7 +302,13 @@ def _latex_as_written(s, var) -> str:
 
 def _latex(p) -> str:
     if isinstance(p, list):
-        return r" \text{ or } ".join(sp.latex(e) for e in p)
+        return r" \text{ or } ".join(sp.latex(e, order="none") for e in p)
     if isinstance(p, sp.Derivative):
         return r"\frac{d}{d%s}\left(%s\right)" % (sp.latex(p.variables[0]), sp.latex(p.expr))
-    return sp.latex(p)
+    return sp.latex(p, order="none")
+
+
+def _latex_set(s, var) -> str:
+    if not s:
+        return r"\text{no real solution}"
+    return r",\quad ".join(f"{sp.latex(var)} = {sp.latex(v)}" for v in sorted(s, key=lambda v: float(v)))

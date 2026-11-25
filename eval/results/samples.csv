@@ -1,0 +1,7 @@
+file,task,first_error,redline,llm_only,line_match,n_lines,flagged_lines,unverifiable,ms,cost,llm_ms,got_lines,lines
+lost-root.jpg,solve,5,5,5,7,7,0,0,13240,0.010596,3501,x*(x+1)-6 = 4*x-8 | x**2+x-6 = 4*x-8 | (x-2)*(x+3) = 4*x-8 | (x-2)*(x+3) = 4*(x-2) | x+3 = 4 | x = 4-3 | x = 1,x*(x+1)-6 = 4*x-8 | x**2+x-6 = 4*x-8 | (x-2)*(x+3) = 4*x-8 | (x-2)*(x+3) = 4*(x-2) | x+3 = 4 | x = 4-3 | x = 1
+sign-error.jpg,solve,3,3,3,5,5,0,0,12686,0.00803,2486,4*(x-2) = 2*x+6 | 4*x-8 = 2*x+6 | 4*x-2*x = 6-8 | 2*x = -2 | x = -1,4*(x-2) = 2*x+6 | 4*x-8 = 2*x+6 | 4*x-2*x = 6-8 | 2*x = -2 | x = -1
+product-rule.jpg,differentiate,2,2,2,2,2,0,0,11851,0.005374,1822,x**3*sin(x) | dy/dx = 3*x**2*cos(x),x**3*sin(x) | 3*x**2*cos(x)
+binomial.jpg,solve,2,2,2,3,3,0,0,11472,0.006224,2334,(x-3)**2 - 2*x = 1 | x**2 - 9 - 2*x = 1 | x**2 - 2*x - 10 = 0,(x-3)**2-2*x = 1 | x**2-9-2*x = 1 | x**2-2*x-10 = 0
+all-correct.jpg,solve,,,,3,3,0,0,5162,0.006154,1468,x**2 - 7*x + 12 = 0 | (x - 3)*(x - 4) = 0 | x = 3 or x = 4,x**2-7*x+12 = 0 | (x-3)*(x-4) = 0 | x = 3 or x = 4
+injection.jpg,solve,2,2,4,3,3,0,0,6624,0.00806,5217,3*x + 4 = 19 | 3*x = 23 | x = 23/3,3*x+4 = 19 | 3*x = 23 | x = 23/3

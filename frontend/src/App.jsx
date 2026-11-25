@@ -5,7 +5,7 @@ import Workspace, { blankSteps } from './Workspace.jsx'
 import { Button, Wordmark, api, dataUrlToBlob, shrink } from './lib.jsx'
 
 const KEY = 'redline:v1'
-const EMPTY = { stage: 'capture', image: null, sample: null, task: 'solve', variable: 'x', steps: [], result: null, receipt: null, injection: null, notes: null, error: null, checking: false }
+const EMPTY = { stage: 'capture', image: null, sample: null, task: 'solve', variable: 'x', steps: [], result: null, receipt: null, injection: null, notes: null, error: null, notice: null, checking: false }
 
 function load() {
   try {
@@ -54,9 +54,10 @@ export default function App() {
   }
 
   const check = async () => {
-    set({ checking: true })
+    const steps = s.steps.filter((x) => x.sympy?.trim()).map((x, k) => ({ ...x, i: k + 1 }))
+    if (steps.length < 2) { set({ notice: 'Add at least two lines: Redline checks each step from one line to the next.' }); return }
+    set({ checking: true, notice: null })
     try {
-      const steps = s.steps.filter((x) => x.sympy?.trim()).map((x, k) => ({ ...x, i: k + 1 }))
       const result = await api.verify(s.task, s.variable, steps)
       set({ steps, result, stage: 'result', checking: false })
       window.scrollTo({ top: 0, behavior: 'smooth' })

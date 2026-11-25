@@ -1,0 +1,87 @@
+{
+ "set": "set_a (typed, synthetic, ground truth by construction)",
+ "baseline_model": "claude-haiku-5-5",
+ "baseline_repeats": 1,
+ "redline": {
+  "n": 154,
+  "n_with_error": 99,
+  "n_correct": 55,
+  "first_error_exact_pct": 100.0,
+  "missed_error_pct": 0.0,
+  "wrong_line_pct": 0.0,
+  "false_alarm_pct": 0.0,
+  "overall_exact_pct": 100.0,
+  "unverifiable_transitions": 0,
+  "p50_ms": 33.25,
+  "cost_usd": 0
+ },
+ "llm_only": {
+  "n": 154,
+  "n_with_error": 99,
+  "n_correct": 55,
+  "first_error_exact_pct": 100.0,
+  "missed_error_pct": 0.0,
+  "wrong_line_pct": 0.0,
+  "false_alarm_pct": 0.0,
+  "overall_exact_pct": 100.0,
+  "api_failures": 0,
+  "p50_ms": 1449,
+  "cost_usd_total": 0.0204,
+  "same_answer_all_runs_pct": 100.0,
+  "per_run_exact_pct": [
+   100.0
+  ]
+ },
+ "by_error_type": {
+  "arith": {
+   "n": 12,
+   "redline_exact": 12,
+   "llm_only_exact": 12
+  },
+  "binomial": {
+   "n": 9,
+   "redline_exact": 9,
+   "llm_only_exact": 9
+  },
+  "chain": {
+   "n": 9,
+   "redline_exact": 9,
+   "llm_only_exact": 9
+  },
+  "distribute": {
+   "n": 3,
+   "redline_exact": 3,
+   "llm_only_exact": 3
+  },
+  "divide": {
+   "n": 9,
+   "redline_exact": 9,
+   "llm_only_exact": 9
+  },
+  "move": {
+   "n": 11,
+   "redline_exact": 11,
+   "llm_only_exact": 11
+  },
+  "none": {
+   "n": 55,
+   "redline_exact": 55,
+   "llm_only_exact": 55
+  },
+  "power": {
+   "n": 9,
+   "redline_exact": 9,
+   "llm_only_exact": 9
+  },
+  "product": {
+   "n": 9,
+   "redline_exact": 9,
+   "llm_only_exact": 9
+  },
+  "sign": {
+   "n": 28,
+   "redline_exact": 28,
+   "llm_only_exact": 28
+  }
+ }
+}

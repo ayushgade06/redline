@@ -80,7 +80,7 @@ def run_a(dataset="set_a", baseline_model=None, repeats=1):
     def base(r):
         pretty = [s.replace("**", "^").replace("*", "·") for s in r["steps"]]  # how a student would type it
         try:
-            out, rec = llm.baseline_check(lines=pretty, model=model)
+            out, rec = llm.baseline_check(lines=pretty, model=model, task=r["task"])
             return out.first_error_line, rec.latency_ms, rec.cost_usd, out.explanation[:300]
         except llm.LLMUnavailable as e:
             return "ERR", None, 0, e.code
@@ -172,7 +172,7 @@ def run_b(d=None):
     ok_r = [r for r in rows if r.get("redline") != "ERR"]
     ok_l = [r for r in rows if r.get("llm_only") != "ERR"]
     tl = sum(len(r["truth_lines"]) for r in ok_r if r["truth_lines"])
-    summary = {"set": "B (real handwritten photos)", "model": llm.primary_model(),
+    summary = {"set": tag, "images": "real photos" if tag == "set_b" else "rendered in a handwriting font (synthetic)", "model": llm.primary_model(),
                "redline": score(ok_r, "redline") | {
                    "transcription_line_accuracy_pct": round(100 * sum(r.get("line_match", 0) for r in ok_r) / tl, 1) if tl else None,
                    "unverifiable_transitions": sum(r.get("unverifiable", 0) for r in ok_r),

@@ -1,6 +1,7 @@
 {
- "set": "A (typed, synthetic, ground truth by construction)",
+ "set": "set_a (typed, synthetic, ground truth by construction)",
  "baseline_model": "claude-sonnet-5-5",
+ "baseline_repeats": 1,
  "redline": {
   "n": 154,
   "n_with_error": 99,
@@ -11,7 +12,7 @@
   "false_alarm_pct": 0.0,
   "overall_exact_pct": 100.0,
   "unverifiable_transitions": 0,
-  "p50_ms": 29.75,
+  "p50_ms": 35.35,
   "cost_usd": 0
  },
  "llm_only": {
@@ -21,11 +22,15 @@
   "first_error_exact_pct": 100.0,
   "missed_error_pct": 0.0,
   "wrong_line_pct": 0.0,
-  "false_alarm_pct": 1.8,
-  "overall_exact_pct": 99.4,
+  "false_alarm_pct": 0.0,
+  "overall_exact_pct": 100.0,
   "api_failures": 0,
-  "p50_ms": 2534,
-  "cost_usd_total": 0.4517
+  "p50_ms": 2192,
+  "cost_usd_total": 0.4068,
+  "same_answer_all_runs_pct": 100.0,
+  "per_run_exact_pct": [
+   100.0
+  ]
  },
  "by_error_type": {
   "arith": {
@@ -61,7 +66,7 @@
   "none": {
    "n": 55,
    "redline_exact": 55,
-   "llm_only_exact": 54
+   "llm_only_exact": 55
   },
   "power": {
    "n": 9,

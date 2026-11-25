@@ -48,6 +48,14 @@ Format: **date · tool · what the AI produced · how it was checked · result �
 - **2026-11-25** · The LLM-only checker scored 99.4% on set A (Redline: 100%). Rather than drop the set, both it and the harder A-hard set are reported (`eval/RESULTS.md`).
 - **Decision:** A-hard was designed after seeing set A's result; this is disclosed.
 
+### 8. The one LLM-only "mistake" was our prompt's fault
+- **2026-11-25** · In the first set A run, the LLM-only checker flagged a correct derivative (`4x² + 3x → 8x + 3`). Its explanation said *"No operation is stated… which would be correct if the task was to differentiate."* Redline had been given the task type; the baseline hadn't.
+- **Decision: changed the baseline, not the claim.** The typed baseline prompt now states the task (`TASK_DESC` in `backend/prompts.py`), and every typed comparison was re-run, so all reported numbers use the same prompt. We could have kept "LLM false-alarm rate 1.8%" as a selling point, but it came from an unfair setup.
+
+### 9. Hypotheses that the data rejected
+- **2026-11-25** · We expected an LLM-only checker to slip on (a) long derivations (A-hard), (b) arithmetic-heavy expansions (A-stress), and (c) instructions written on the page (set INJ).
+- **Result:** on typed steps, Claude Sonnet 5.5 and Haiku 5.5 matched SymPy, and neither was talked into saying "all correct" by on-page text. These results are reported in `eval/RESULTS.md` as they came out. Redline's case rests on what it measurably adds: correct line references on the photo, a checkable proof, determinism, and free re-checks.
+
 ---
 
 ## Still needs a human check (builder to complete before submission)

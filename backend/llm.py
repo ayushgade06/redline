@@ -193,12 +193,15 @@ def call_json(schema: type[BaseModel], system: str, user_text: str, image=None, 
                 status = getattr(e, "status_code", None)
                 attempts.append({"model": model, "error": f"{type(e).__name__}{f' {status}' if status else ''}"})
                 last_err = e
-                if status in (401, 403):
-                    raise LLMUnavailable("auth", "The AI provider rejected our credentials. Your photo and edits are kept.") from e
-                if status == 402:
-                    raise LLMUnavailable("budget", "This student's AI spend cap has been reached. Your photo and edits are kept.") from e
+                typed = {401: ("auth", "The AI provider rejected our credentials. Your photo and edits are kept."),
+                         403: ("auth", "The AI provider rejected our credentials. Your photo and edits are kept."),
+                         402: ("budget", "This student's AI spend cap has been reached. Your photo and edits are kept.")}.get(status)
                 if status == 400 and "shield" in str(e).lower():
-                    raise LLMUnavailable("blocked", "The gateway's safety shield blocked this request.") from e
+                    typed = ("blocked", "The gateway's safety shield blocked this request.")
+                if typed:  # retrying or switching model can't fix these
+                    err = LLMUnavailable(*typed)
+                    err.attempts = attempts
+                    raise err from e
                 if _is_retryable(e) and t + 1 < tries:
                     time.sleep(1.0 * (t + 1))
                     continue
@@ -291,9 +294,10 @@ def hint(transition: dict, prev_line: str, level: int, task: str, final_line: st
             "receipt": rec.__dict__ if rec else None}
 
 
-def baseline_check(image: tuple[bytes, str] | None = None, lines: list[str] | None = None, model=None):
+def baseline_check(image: tuple[bytes, str] | None = None, lines: list[str] | None = None, model=None, task: str = "simplify"):
     """The LLM-only checker we compare against (A2b): same model, asked to find the first wrong line itself."""
     user = prompts.BASELINE_USER_IMAGE if image else prompts.BASELINE_USER_TEXT.format(
+        task_desc=prompts.TASK_DESC.get(task, prompts.TASK_DESC["simplify"]),
         lines="\n".join(f"{i + 1}. {l}" for i, l in enumerate(lines)))
     return call_json(BaselineVerdict, prompts.BASELINE_SYSTEM, user, image, "baseline", "eval",
                      [model or primary_model()], 16000, effort=None)  # model's default effort: a fair baseline

@@ -39,6 +39,7 @@ export default function Workspace({ s, set, onCheck, onRetryRead, onReset }) {
                     Check my work
                   </Button>
                   <Button variant="ghost" onClick={onReset}>Start over</Button>
+                  {s.notice && <p role="status" className="w-full text-sm text-pen">{s.notice}</p>}
                 </div>
               )}
               {result && <Receipt s={s} />}
@@ -104,7 +105,7 @@ function ReadingPanel() {
   return (
     <div aria-live="polite">
       <h2 className="text-2xl font-bold tracking-tight">Reading your handwriting…</h2>
-      <p className="mt-2 text-ink-soft">Usually 3–8 seconds. Your photo stays on this device if anything fails.</p>
+      <p className="mt-2 text-ink-soft">This takes a few seconds. Your photo stays on this device if anything fails.</p>
       <div className="mt-6 grid gap-3">
         {[80, 64, 72, 50].map((w, i) => <div key={i} className="skeleton h-14 rounded-xl" style={{ width: `${w}%` }} />)}
       </div>
@@ -115,12 +116,15 @@ function ReadingPanel() {
 function ErrorPanel({ error, onRetry, onType, onReset }) {
   const offline = ['provider_down', 'offline', 'bad_output'].includes(error.code)
   const Icon = offline ? WifiOff : AlertTriangle
+  const title = { provider_down: 'We couldn’t read the photo just now', bad_output: 'We couldn’t read the photo just now',
+    offline: 'Can’t reach Redline', auth: 'The AI reader isn’t available', budget: 'AI spend limit reached',
+    interrupted: 'The last read didn’t finish', rate_limited: 'Too many checks in a row' }[error.code] || 'That didn’t work'
   return (
     <div role="alert" className="rounded-2xl bg-paper ring-1 ring-rule p-5 sm:p-6 rise">
       <div className="flex items-start gap-3">
         <Icon className="size-5 text-pen mt-0.5 shrink-0" aria-hidden />
         <div>
-          <h2 className="font-bold text-lg">{offline ? 'We couldn’t read the photo just now' : 'That didn’t work'}</h2>
+          <h2 className="font-bold text-lg">{title}</h2>
           <p className="mt-1 text-ink-soft leading-relaxed">{error.message}</p>
           {error.attempts?.length > 0 && (
             <p className="mt-2 text-sm text-pencil">Tried: {error.attempts.map((a) => `${a.model} (${a.error || 'ok'})`).join(', then ')}.</p>
@@ -169,6 +173,9 @@ function ReviewHeader({ s }) {
 function Verdict({ s, errT, firstErr }) {
   const trans = s.result.transitions
   const unver = trans.filter((t) => t.verdict === 'UNVERIFIABLE').length
+  if (trans.length === 0) {
+    return <p role="status" className="mb-6 rounded-2xl bg-paper ring-1 ring-rule p-5 text-ink-soft">Add at least two lines: Redline checks each step from one line to the next.</p>
+  }
   if (firstErr == null) {
     const allUnver = trans.length > 0 && unver === trans.length
     return (
@@ -207,11 +214,12 @@ function Verdict({ s, errT, firstErr }) {
             <div className="text-sm font-semibold text-pencil">{root ? 'Solutions' : 'Check it yourself'}</div>
             <div className="mt-1.5 text-[15px] leading-relaxed">
               {root
-                ? <>Line {errT.from}: <b>{errT.prev_solutions}</b><br />Line {firstErr}: <b>{errT.this_solutions}</b></>
+                ? <>Line {errT.from}: <Tex tex={errT.prev_solutions_latex} /><br />Line {firstErr}: <span className="text-pen"><Tex tex={errT.this_solutions_latex} /></span></>
                 : errT.witness
-                  ? <>Put <b>x = {errT.witness.x}</b> into both lines: line {errT.from} gives <b>{errT.witness.prev}</b>, line {firstErr} gives <b className="text-pen">{errT.witness.this}</b>.</>
-                  : errT.prev_solutions
-                    ? <>Line {errT.from} solves to <b>{errT.prev_solutions}</b>, line {firstErr} to <b className="text-pen">{errT.this_solutions}</b>.</>
+                  ? <>Put <b>x = {errT.witness.x}</b> into {errT.side ? `the ${errT.side}-hand side of both lines` : 'both lines'}:
+                      {s.task === 'differentiate' && errT.from === s.steps[0]?.i ? `the derivative of line ${errT.from}` : `line ${errT.from}`} gives <b>{errT.witness.prev}</b>, line {firstErr} gives <b className="text-pen">{errT.witness.this}</b>. They should match.</>
+                  : errT.prev_solutions_latex
+                    ? <>Line {errT.from} solves to <Tex tex={errT.prev_solutions_latex} />; line {firstErr} solves to <span className="text-pen"><Tex tex={errT.this_solutions_latex} /></span>.</>
                     : errT.detail}
             </div>
           </div>

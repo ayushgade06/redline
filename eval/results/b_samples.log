@@ -1,0 +1,29 @@
+{
+ "set": "B (real handwritten photos)",
+ "model": "claude-sonnet-5-5",
+ "redline": {
+  "n": 6,
+  "n_with_error": 5,
+  "n_correct": 1,
+  "first_error_exact_pct": 100.0,
+  "missed_error_pct": 0.0,
+  "wrong_line_pct": 0.0,
+  "false_alarm_pct": 0.0,
+  "overall_exact_pct": 100.0,
+  "transcription_line_accuracy_pct": 100.0,
+  "unverifiable_transitions": 0,
+  "p50_ms": 11662,
+  "cost_usd_per_check": 0.00741
+ },
+ "llm_only": {
+  "n": 6,
+  "n_with_error": 5,
+  "n_correct": 1,
+  "first_error_exact_pct": 80.0,
+  "missed_error_pct": 0.0,
+  "wrong_line_pct": 20.0,
+  "false_alarm_pct": 0.0,
+  "overall_exact_pct": 83.3,
+  "p50_ms": 2410
+ }
+}

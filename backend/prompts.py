@@ -63,4 +63,10 @@ correctly from the line before it. If every step is correct, say so.
 Return ONLY JSON: {"first_error_line": <line number of the first wrong line, or null if all correct>, "explanation": "..."}"""
 
 BASELINE_USER_IMAGE = "Here is a photo of the student's work. Number the lines from 1 at the top."
-BASELINE_USER_TEXT = "Student's working, one line per step:\n{lines}"
+BASELINE_USER_TEXT = "Task: {task_desc}\nStudent's working, one line per step:\n{lines}"
+TASK_DESC = {
+    "solve": "solve the equation on line 1 for x; each line should be equivalent to the one before.",
+    "simplify": "expand, factorise or simplify the expression on line 1; each line should equal the one before.",
+    "differentiate": "differentiate the function on line 1 with respect to x; line 2 onwards are the derivative, "
+                     "so each must equal d/dx of line 1.",
+}
