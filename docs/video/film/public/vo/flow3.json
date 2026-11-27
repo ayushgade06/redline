@@ -1,0 +1,29 @@
+{
+ "spoken": "Then, check my work.",
+ "voice": "en-US-AvaMultilingualNeural",
+ "rate": "-1%",
+ "duration": 1.872,
+ "words": [
+  {
+   "t": 0.05025,
+   "d": 0.366166,
+   "w": "Then"
+  },
+  {
+   "t": 0.429041,
+   "d": 0.202,
+   "w": "check"
+  },
+  {
+   "t": 0.643666,
+   "d": 0.1515,
+   "w": "my"
+  },
+  {
+   "t": 0.807833,
+   "d": 0.441916,
+   "w": "work"
+  }
+ ],
+ "hash": "44d0862e4a"
+}

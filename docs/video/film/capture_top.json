@@ -1,0 +1,7 @@
+{"url": "http://localhost:8000", "zoom": 1.5, "colorScheme": "light", "steps": [
+ {"goto": "/"}, {"eval": "localStorage.clear()"}, {"goto": "/"}, {"scrollTo": "#samples-h"},
+ {"click": "button:has-text('Quadratic: divides by')"},
+ {"scrollY": 0}, {"wait": 900}, {"shot": "lr_reading"},
+ {"waitFor": "text=Check what we read", "timeout": 90000},
+ {"scrollY": 0}, {"wait": 700}, {"shot": "lr_confirm"}, {"text": "lr_confirm"}
+]}

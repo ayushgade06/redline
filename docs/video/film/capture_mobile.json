@@ -1,0 +1,20 @@
+{
+ "url": "http://localhost:8000", "zoom": 1, "colorScheme": "light",
+ "viewport": {"width": 390, "height": 844}, "scale": 3,
+ "steps": [
+  {"goto": "/"}, {"eval": "localStorage.clear()"}, {"goto": "/"}, {"wait": 2200},
+  {"shot": "m_hero"},
+  {"scrollTo": "#samples-h"},
+  {"click": "button:has-text('Quadratic: divides by')"},
+  {"waitFor": "text=Check what we read", "timeout": 90000},
+  {"click": "button:has-text('Check my work')"},
+  {"waitFor": "text=doesn’t follow from line", "timeout": 30000},
+  {"wait": 1500}, {"scrollY": 0}, {"wait": 500},
+  {"shot": "m_result_top"},
+  {"scrollTo": "#err-h"}, {"eval": "window.scrollBy(0,-80)"}, {"wait": 500}, {"shot": "m_result_card"},
+  {"click": "button:has-text('Give me a nudge')"},
+  {"waitFor": "button:has-text('Which rule did I break?')", "timeout": 60000},
+  {"wait": 500}, {"scrollTo": "#err-h"}, {"eval": "window.scrollBy(0,120)"}, {"wait": 400}, {"shot": "m_hint1"}, {"text": "m_hint1"},
+  {"shot": "m_full", "full": true}
+ ]
+}

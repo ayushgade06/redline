@@ -1,0 +1,171 @@
+Redline
+New check
+1
+2
+✓
+3
+✓
+4
+✓
+5
+✗
+6
+✓
+7
+✓
+Tap a numbered band to find that line in the list.
+Line 5 doesn’t follow from line 4
+You wrote
+𝑥
++
+3
+=
+4
+x+3=4
+Solutions
+Line 4: 
+𝑥
+=
+1
+,
+𝑥
+=
+2
+x=1,x=2
+Line 5: 
+𝑥
+=
+1
+x=1
+
+This step lost the solution x = 2 (solutions went from {1, 2} to {1}). Dividing by an expression that can be zero does this.
+
+Hints
+English
+हिंदी
+मराठी
+1
+
+Look at the step where you divided both sides by (x - 2): think about what value of x would make that factor zero, and whether you may divide by it.
+
+Written by AI from the engine’s finding; checked so it can’t reveal the answer
+2
+
+You divided both sides by (x - 2), but that factor can be zero, so you may have thrown away a solution. Which rule says you can only cancel a common factor safely when you know it isn't zero, and what could you do with the equation instead of dividing?
+
+Written by AI from the engine’s finding; checked so it can’t reveal the answer
+3
+
+The engine found: This step lost the solution x = 2 (solutions went from {1, 2} to {1}). Dividing by an expression that can be zero does this. Rewrite this line so it keeps every solution.
+
+From the maths engine
+Every step
+Problem type
+Solve an equation
+Expand, factorise or simplify
+Differentiate
+1
+𝑥
+(
+𝑥
++
+1
+)
+−
+6
+=
+4
+𝑥
+−
+8
+x(x+1)−6=4x−8
+Start
+2
+𝑥
+2
++
+𝑥
+−
+6
+=
+4
+𝑥
+−
+8
+x
+2
++x−6=4x−8
+✓
+Follows
+3
+(
+𝑥
+−
+2
+)
+(
+𝑥
++
+3
+)
+=
+4
+𝑥
+−
+8
+(x−2)(x+3)=4x−8
+✓
+Follows
+4
+(
+𝑥
+−
+2
+)
+(
+𝑥
++
+3
+)
+=
+4
+(
+𝑥
+−
+2
+)
+(x−2)(x+3)=4(x−2)
+✓
+Follows
+5
+𝑥
++
+3
+=
+4
+x+3=4
+✗
+Solution changed
+6
+𝑥
+=
+4
+−
+3
+x=4−3
+✓
+Follows
+7
+𝑥
+=
+1
+x=1
+✓
+Follows
+Add a line
+Edit any line and it’s re-checked instantly.
+Steps checked by
+SymPy in 272.7 ms. No AI decides right or wrong.
+Handwriting read by
+claude-sonnet-5-5 in 4.1 s, ≈ ₹0.93
+Built for self-study. Redline checks algebra and derivatives, one variable at a time. It doesn’t do geometry, word problems, proofs or integrals.

@@ -9,3 +9,16 @@ eval/results/raw/
 samples/_fonts/
 
 .vercel
+
+# film build (docs/video)
+docs/video/film/.venv/
+docs/video/film/out/
+docs/video/film/capture/frames_*/
+docs/video/film/test/
+# film: large or reproducible assets (re-create with film/capture*.json, voiceover.py, audio.py, master.sh)
+docs/video/redline-film-clean.mp4
+docs/video/film/public/shots/
+docs/video/film/public/clips/
+docs/video/film/public/audio/
+docs/video/film/capture/*.png
+docs/video/film/capture/blur/

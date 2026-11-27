@@ -1,0 +1,29 @@
+{
+ "spoken": "Redline. Built this week.",
+ "voice": "en-US-AvaMultilingualNeural",
+ "rate": "-6%",
+ "duration": 2.256,
+ "words": [
+  {
+   "t": 0.052375,
+   "d": 0.5585,
+   "w": "Redline"
+  },
+  {
+   "t": 1.010625,
+   "d": 0.226083,
+   "w": "Built"
+  },
+  {
+   "t": 1.236708,
+   "d": 0.21275,
+   "w": "this"
+  },
+  {
+   "t": 1.46275,
+   "d": 0.398916,
+   "w": "week"
+  }
+ ],
+ "hash": "d0de13fbca"
+}

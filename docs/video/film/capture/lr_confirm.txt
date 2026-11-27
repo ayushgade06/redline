@@ -1,0 +1,108 @@
+Redline
+New check
+1
+2
+3
+4
+5
+6
+7
+Tap a numbered band to find that line in the list.
+Check what we read
+
+Everything looked clear. Glance over the lines, then check.
+
+Lines
+Problem type
+Solve an equation
+Expand, factorise or simplify
+Differentiate
+1
+𝑥
+(
+𝑥
++
+1
+)
+−
+6
+=
+4
+𝑥
+−
+8
+x(x+1)−6=4x−8
+2
+𝑥
+2
++
+𝑥
+−
+6
+=
+4
+𝑥
+−
+8
+x
+2
++x−6=4x−8
+3
+(
+𝑥
+−
+2
+)
+(
+𝑥
++
+3
+)
+=
+4
+𝑥
+−
+8
+(x−2)(x+3)=4x−8
+4
+(
+𝑥
+−
+2
+)
+(
+𝑥
++
+3
+)
+=
+4
+(
+𝑥
+−
+2
+)
+(x−2)(x+3)=4(x−2)
+5
+𝑥
++
+3
+=
+4
+x+3=4
+6
+𝑥
+=
+4
+−
+3
+x=4−3
+7
+𝑥
+=
+1
+x=1
+Add a line
+Check my work
+Start over
+Built for self-study. Redline checks algebra and derivatives, one variable at a time. It doesn’t do geometry, word problems, proofs or integrals.

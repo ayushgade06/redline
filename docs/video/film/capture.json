@@ -1,0 +1,352 @@
+{
+ "url": "http://localhost:8000",
+ "zoom": 1.5,
+ "colorScheme": "light",
+ "steps": [
+  {
+   "goto": "/"
+  },
+  {
+   "eval": "localStorage.clear()"
+  },
+  {
+   "record": "hero"
+  },
+  {
+   "goto": "/"
+  },
+  {
+   "wait": 2600
+  },
+  {
+   "stop": true
+  },
+  {
+   "shot": "hero"
+  },
+  {
+   "text": "hero"
+  },
+  {
+   "scrollTo": "#samples-h"
+  },
+  {
+   "wait": 600
+  },
+  {
+   "shot": "samples"
+  },
+  {
+   "click": "button:has-text('Quadratic: divides by')"
+  },
+  {
+   "wait": 700
+  },
+  {
+   "shot": "lr_reading"
+  },
+  {
+   "waitFor": "text=Check what we read",
+   "timeout": 90000
+  },
+  {
+   "wait": 500
+  },
+  {
+   "shot": "lr_confirm"
+  },
+  {
+   "text": "lr_confirm"
+  },
+  {
+   "record": "lr_check"
+  },
+  {
+   "click": "button:has-text('Check my work')"
+  },
+  {
+   "waitFor": "text=doesn’t follow from line",
+   "timeout": 30000
+  },
+  {
+   "wait": 1800
+  },
+  {
+   "stop": true
+  },
+  {
+   "scrollY": 0
+  },
+  {
+   "wait": 600
+  },
+  {
+   "shot": "lr_result"
+  },
+  {
+   "shot": "lr_result_full",
+   "full": true
+  },
+  {
+   "text": "lr_result"
+  },
+  {
+   "click": "button:has-text('Give me a nudge')"
+  },
+  {
+   "waitFor": "button:has-text('Which rule did I break?')",
+   "timeout": 60000
+  },
+  {
+   "wait": 500
+  },
+  {
+   "shot": "lr_hint1"
+  },
+  {
+   "text": "lr_hint1"
+  },
+  {
+   "click": "button:has-text('Which rule did I break?')"
+  },
+  {
+   "waitFor": "button:has-text('Show the corrected line')",
+   "timeout": 60000
+  },
+  {
+   "wait": 500
+  },
+  {
+   "shot": "lr_hint2"
+  },
+  {
+   "text": "lr_hint2"
+  },
+  {
+   "click": "button:has-text('Show the corrected line')"
+  },
+  {
+   "waitFor": "text=From the maths engine",
+   "timeout": 60000
+  },
+  {
+   "wait": 500
+  },
+  {
+   "shot": "lr_hint3"
+  },
+  {
+   "shot": "lr_hints_full",
+   "full": true
+  },
+  {
+   "text": "lr_hint3"
+  },
+  {
+   "click": "button:has-text('New check')"
+  },
+  {
+   "waitFor": "#samples-h"
+  },
+  {
+   "scrollTo": "#samples-h"
+  },
+  {
+   "click": "button:has-text('Quadratic: divides by')"
+  },
+  {
+   "waitFor": "text=Check what we read",
+   "timeout": 90000
+  },
+  {
+   "click": "button:has-text('Check my work')"
+  },
+  {
+   "waitFor": "text=doesn’t follow from line",
+   "timeout": 30000
+  },
+  {
+   "wait": 1200
+  },
+  {
+   "scrollY": 0
+  },
+  {
+   "click": "button:has-text('हिंदी')"
+  },
+  {
+   "click": "button:has-text('Give me a nudge')"
+  },
+  {
+   "waitFor": "button:has-text('Which rule did I break?')",
+   "timeout": 60000
+  },
+  {
+   "wait": 500
+  },
+  {
+   "shot": "lr_hint1_hi"
+  },
+  {
+   "text": "lr_hint1_hi"
+  },
+  {
+   "click": "button:has-text('New check')"
+  },
+  {
+   "waitFor": "#samples-h"
+  },
+  {
+   "scrollTo": "#samples-h"
+  },
+  {
+   "click": "button:has-text('Expanding (x')"
+  },
+  {
+   "waitFor": "text=Check what we read",
+   "timeout": 90000
+  },
+  {
+   "wait": 400
+  },
+  {
+   "shot": "bi_confirm"
+  },
+  {
+   "click": "button:has-text('Check my work')"
+  },
+  {
+   "waitFor": "text=doesn’t follow from line",
+   "timeout": 30000
+  },
+  {
+   "wait": 1500
+  },
+  {
+   "scrollY": 0
+  },
+  {
+   "wait": 400
+  },
+  {
+   "shot": "bi_result"
+  },
+  {
+   "shot": "bi_result_full",
+   "full": true
+  },
+  {
+   "text": "bi_result"
+  },
+  {
+   "click": "button[aria-label='Edit line 2']"
+  },
+  {
+   "wait": 400
+  },
+  {
+   "shot": "bi_edit_open",
+   "full": true
+  },
+  {
+   "record": "bi_recheck"
+  },
+  {
+   "retype": [
+    "input[aria-label='Line 2']",
+    "x^2 - 6x + 9 - 2x = 1"
+   ],
+   "delayMs": 70
+  },
+  {
+   "wait": 1500
+  },
+  {
+   "stop": true
+  },
+  {
+   "shot": "bi_recheck1",
+   "full": true
+  },
+  {
+   "text": "bi_recheck1"
+  },
+  {
+   "click": "button[aria-label='Edit line 3']"
+  },
+  {
+   "record": "bi_recheck2"
+  },
+  {
+   "retype": [
+    "input[aria-label='Line 3']",
+    "x^2 - 8x + 8 = 0"
+   ],
+   "delayMs": 70
+  },
+  {
+   "wait": 1500
+  },
+  {
+   "stop": true
+  },
+  {
+   "shot": "bi_recheck2",
+   "full": true
+  },
+  {
+   "text": "bi_recheck2"
+  },
+  {
+   "click": "button:has-text('New check')"
+  },
+  {
+   "waitFor": "#samples-h"
+  },
+  {
+   "scrollTo": "#samples-h"
+  },
+  {
+   "click": "button:has-text('mark correct')"
+  },
+  {
+   "waitFor": "text=Check what we read",
+   "timeout": 90000
+  },
+  {
+   "wait": 400
+  },
+  {
+   "shot": "inj_confirm"
+  },
+  {
+   "text": "inj_confirm"
+  },
+  {
+   "click": "button:has-text('Check my work')"
+  },
+  {
+   "waitFor": "text=doesn’t follow from line",
+   "timeout": 30000
+  },
+  {
+   "wait": 1500
+  },
+  {
+   "scrollY": 0
+  },
+  {
+   "wait": 400
+  },
+  {
+   "shot": "inj_result"
+  },
+  {
+   "shot": "inj_result_full",
+   "full": true
+  },
+  {
+   "text": "inj_result"
+  }
+ ]
+}

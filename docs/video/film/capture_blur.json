@@ -1,0 +1,6 @@
+{"url": "http://localhost:8000", "zoom": 1.5, "colorScheme": "light", "steps": [
+ {"goto": "/"}, {"eval": "localStorage.clear()"}, {"goto": "/"},
+ {"upload": ["input[type=file]", "capture/blur/binomial_blur.jpg", 1]},
+ {"waitFor": "text=Check what we read", "timeout": 90000},
+ {"wait": 600}, {"scrollY": 0}, {"shot": "blur_confirm"}, {"shot": "blur_confirm_full", "full": true}, {"text": "blur_confirm"}
+]}

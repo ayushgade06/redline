@@ -1,0 +1,73 @@
+Redline
+New check
+1
+2
+✓
+3
+✓
+Tap a numbered band to find that line in the list.
+Every step we checked follows
+
+If your final answer still disagrees with the key, compare your first line with the question.
+
+Every step
+Problem type
+Solve an equation
+Expand, factorise or simplify
+Differentiate
+1
+(
+𝑥
+−
+3
+)
+2
+−
+2
+𝑥
+=
+1
+(x−3)
+2
+−2x=1
+Start
+2
+𝑥
+2
+−
+6
+𝑥
++
+9
+−
+2
+𝑥
+=
+1
+x
+2
+−6x+9−2x=1
+✓
+Follows
+3
+𝑥
+2
+−
+8
+𝑥
++
+8
+=
+0
+x
+2
+−8x+8=0
+✓
+Follows
+Add a line
+Edit any line and it’s re-checked instantly.
+Steps checked by
+SymPy in 63.6 ms. No AI decides right or wrong.
+Handwriting read by
+claude-sonnet-5-5 in 1.8 s, ≈ ₹0.53
+Built for self-study. Redline checks algebra and derivatives, one variable at a time. It doesn’t do geometry, word problems, proofs or integrals.

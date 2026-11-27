@@ -1,0 +1,87 @@
+Redline
+New check
+1
+2
+✗
+3
+✓
+Tap a numbered band to find that line in the list.
+Line 2 doesn’t follow from line 1
+You wrote
+𝑥
+2
+−
+9
+−
+2
+𝑥
+=
+1
+x
+2
+−9−2x=1
+Check it yourself
+Put x = 2 into the left-hand side of both lines:line 1 gives -3, line 2 gives -9. They should match.
+Hints
+English
+हिंदी
+मराठी
+Give me a nudge
+Every step
+Problem type
+Solve an equation
+Expand, factorise or simplify
+Differentiate
+1
+(
+𝑥
+−
+3
+)
+2
+−
+2
+𝑥
+=
+1
+(x−3)
+2
+−2x=1
+Start
+2
+𝑥
+2
+−
+9
+−
+2
+𝑥
+=
+1
+x
+2
+−9−2x=1
+✗
+Wrong step
+3
+𝑥
+2
+−
+2
+𝑥
+−
+10
+=
+0
+x
+2
+−2x−10=0
+✓
+Follows
+Add a line
+Edit any line and it’s re-checked instantly.
+Steps checked by
+SymPy in 121.5 ms. No AI decides right or wrong.
+Handwriting read by
+claude-sonnet-5-5 in 1.8 s, ≈ ₹0.53
+Built for self-study. Redline checks algebra and derivatives, one variable at a time. It doesn’t do geometry, word problems, proofs or integrals.

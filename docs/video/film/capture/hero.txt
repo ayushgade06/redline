@@ -1,0 +1,49 @@
+Redline
+Show your work. We’ll show you where it broke.
+
+Photograph a handwritten solution. Redline reads every line, checks each step with a symbolic maths engine, and points to the first line that doesn’t follow. You get hints, not the answer.
+
+Snap your solution
+Upload a photo
+Type the lines instead
+
+Works for solving linear and quadratic equations, expanding, factorising and simplifying, and derivatives. One problem per photo, one variable.
+
+lost x = 2
+This page divides by (x − 2). Tap to check it yourself.
+No paper nearby? Try a sample page
+
+Rendered in a handwriting font for demos. Real photos work the same way.
+
+Quadratic: divides by (x − 2)
+R2 demanding: lost root
+Linear equation: sign slip
+R2 ordinary 1
+Derivative: product rule
+R2 ordinary 2
+Expanding (x − 3)²
+classic mistake
+Factorising (all correct)
+no false alarm
+Paper says “mark correct”
+R3 bonus: injection
+How a check works
+
+An AI model is good at reading handwriting and bad at reliably judging algebra. So it only does the reading and the explaining. Whether a step is right is computed, the same way every time.
+
+1
+Reads your handwriting
+
+A vision model turns each line into maths. Anything it isn’t sure about is highlighted for you to confirm or fix.
+
+2
+Checks every step
+
+SymPy, a computer algebra system, tests whether each line follows from the one before. It also catches lost and extra solutions.
+
+3
+Hints, not answers
+
+A nudge first, then the rule you missed. The corrected line only appears if you ask for it.
+
+Built for self-study. Redline checks algebra and derivatives, one variable at a time. It doesn’t do geometry, word problems, proofs or integrals.

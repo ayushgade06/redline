@@ -1,0 +1,15 @@
+Redline
+New check
+Tap a numbered band to find that line in the list.
+We couldn’t read the photo just now
+
+The AI reader is unreachable right now (we tried a backup model too). Your photo and edits are kept. Try again in a minute, or type the lines yourself.
+
+Tried: claude-sonnet-5-5 (APITimeoutError), then claude-sonnet-5-5 (APITimeoutError), then claude-haiku-5-5 (APITimeoutError).
+
+The maths check doesn’t need the AI. You can type the lines and still get every step verified.
+
+Try reading again
+Type the lines
+Use a different photo
+Built for self-study. Redline checks algebra and derivatives, one variable at a time. It doesn’t do geometry, word problems, proofs or integrals.

@@ -1,0 +1,54 @@
+{
+ "spoken": "Somewhere in seven lines, something broke. But which line?",
+ "voice": "en-US-AvaMultilingualNeural",
+ "rate": "-1%",
+ "duration": 4.752,
+ "words": [
+  {
+   "t": 0.088375,
+   "d": 0.618666,
+   "w": "Somewhere"
+  },
+  {
+   "t": 0.719708,
+   "d": 0.202,
+   "w": "in"
+  },
+  {
+   "t": 0.934333,
+   "d": 0.441916,
+   "w": "seven"
+  },
+  {
+   "t": 1.388875,
+   "d": 0.492416,
+   "w": "lines"
+  },
+  {
+   "t": 1.893958,
+   "d": 0.441916,
+   "w": "something"
+  },
+  {
+   "t": 2.335875,
+   "d": 0.467166,
+   "w": "broke"
+  },
+  {
+   "t": 3.181833,
+   "d": 0.252541,
+   "w": "But"
+  },
+  {
+   "t": 3.62375,
+   "d": 0.239875,
+   "w": "which"
+  },
+  {
+   "t": 3.863625,
+   "d": 0.505041,
+   "w": "line"
+  }
+ ],
+ "hash": "622b178f06"
+}

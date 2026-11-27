@@ -1,0 +1,64 @@
+Redline
+New check
+1
+2
+3
+Tap a numbered band to find that line in the list.
+Check what we read
+
+We weren’t sure about 2 lines. Compare them with your paper and fix anything we misread. Copy your mistakes too; that’s what we’re checking.
+
+Reader’s note: Image is blurry. The '3' in line 1 could be a 1 or 3 (it looks like 3). In line 2 the constant is written like '9' (could be 1 or 9); transcribed as 9. Line 3 reads -10 and = 0.
+
+Lines
+Problem type
+Solve an equation
+Expand, factorise or simplify
+Differentiate
+1
+(
+𝑥
+−
+3
+)
+2
+−
+2
+𝑥
+=
+1
+(x−3)
+2
+−2x=1
+We weren’t sure we read this right (60% confident).
+2
+𝑥
+2
+−
+9
+−
+2
+𝑥
+=
+1
+x
+2
+−9−2x=1
+We weren’t sure we read this right (55% confident).
+3
+𝑥
+2
+−
+2
+𝑥
+−
+10
+=
+0
+x
+2
+−2x−10=0
+Add a line
+Check my work
+Start over
+Built for self-study. Redline checks algebra and derivatives, one variable at a time. It doesn’t do geometry, word problems, proofs or integrals.

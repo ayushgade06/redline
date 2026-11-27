@@ -10,6 +10,8 @@ you to fix it yourself. The line is found by a symbolic maths engine; an LLM nev
 
 Built for the Global AI Builder's Challenge (Refactor The World, Nov 2026). Every line of code was written during the event.
 
+**Demo video (3:29):** https://youtu.be/8e227r9ulY8 · film source, script with fact sources and QA report in [docs/video/](docs/video/)
+
 ---
 
 ## Who it's for

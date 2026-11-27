@@ -1,0 +1,150 @@
+{
+ "url": "http://localhost:8000",
+ "zoom": 1.5,
+ "colorScheme": "light",
+ "steps": [
+  {
+   "goto": "/"
+  },
+  {
+   "eval": "localStorage.clear()"
+  },
+  {
+   "goto": "/"
+  },
+  {
+   "scrollTo": "#samples-h"
+  },
+  {
+   "click": "button:has-text('Quadratic: divides by')"
+  },
+  {
+   "waitFor": "text=We couldn’t read the photo just now",
+   "timeout": 90000
+  },
+  {
+   "wait": 600
+  },
+  {
+   "scrollY": 0
+  },
+  {
+   "shot": "fail_panel"
+  },
+  {
+   "text": "fail_panel"
+  },
+  {
+   "click": "button:has-text('Type the lines')"
+  },
+  {
+   "wait": 500
+  },
+  {
+   "shot": "fail_type_empty"
+  },
+  {
+   "record": "fail_typing"
+  },
+  {
+   "fill": [
+    "input[aria-label='Line 1']",
+    "x(x+1) - 6 = 4x - 8"
+   ],
+   "delayMs": 35
+  },
+  {
+   "fill": [
+    "input[aria-label='Line 2']",
+    "x^2 + x - 6 = 4x - 8"
+   ],
+   "delayMs": 35
+  },
+  {
+   "click": "button:has-text('Add a line')"
+  },
+  {
+   "fill": [
+    "input[aria-label='Line 3']",
+    "(x-2)(x+3) = 4x - 8"
+   ],
+   "delayMs": 35
+  },
+  {
+   "click": "button:has-text('Add a line')"
+  },
+  {
+   "fill": [
+    "input[aria-label='Line 4']",
+    "(x-2)(x+3) = 4(x-2)"
+   ],
+   "delayMs": 35
+  },
+  {
+   "click": "button:has-text('Add a line')"
+  },
+  {
+   "fill": [
+    "input[aria-label='Line 5']",
+    "x + 3 = 4"
+   ],
+   "delayMs": 35
+  },
+  {
+   "click": "button:has-text('Add a line')"
+  },
+  {
+   "fill": [
+    "input[aria-label='Line 6']",
+    "x = 4 - 3"
+   ],
+   "delayMs": 35
+  },
+  {
+   "click": "button:has-text('Add a line')"
+  },
+  {
+   "fill": [
+    "input[aria-label='Line 7']",
+    "x = 1"
+   ],
+   "delayMs": 35
+  },
+  {
+   "wait": 400
+  },
+  {
+   "stop": true
+  },
+  {
+   "shot": "fail_typed",
+   "full": true
+  },
+  {
+   "click": "button:has-text('Check my work')"
+  },
+  {
+   "waitFor": "text=doesn’t follow from line",
+   "timeout": 30000
+  },
+  {
+   "wait": 1500
+  },
+  {
+   "scrollY": 0
+  },
+  {
+   "wait": 300
+  },
+  {
+   "shot": "fail_result"
+  },
+  {
+   "shot": "fail_result_full",
+   "full": true
+  },
+  {
+   "text": "fail_result"
+  }
+ ]
+}
